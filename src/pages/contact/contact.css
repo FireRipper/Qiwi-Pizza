@@ -83,10 +83,9 @@
 }
 
 .contact-content-box__p {
-    font-size: calc( (100vw - 480px)/(1280 - 480) * (15 - 16) + 18px);
     margin-bottom: 30px;
 }
 
-.contact-content-box__for__link{
+.contact-content-box__for__link, .contact-content-box__p{
     font-size: calc( (100vw - 480px)/(1280 - 480) * (15 - 16) + 18px);
 }
