@@ -20,6 +20,13 @@
     text-align: center !important;
 }
 
+.app-header-menu li a {
+    color: #33475b !important;
+}
+
+.app-header-menu li a:hover {
+    color: #1890ff !important;
+}
 
 @media screen and (max-width: 992px) {
     .app-header-logo img {

@@ -1,3 +1,5 @@
 .app-footer {
     flex-shrink: 0;
+    margin-top: 50px;
+    color: #33475b !important;
 }

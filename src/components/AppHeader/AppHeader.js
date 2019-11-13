@@ -16,18 +16,20 @@ export default class AppHeader extends Component {
         { key: 'callback', link: '/callback', icon: faHeadset, label: 'Обратная связь' }
     ]
 
-    render() {
-
-        const renderMenuItem = this.menuItems.map(({ key, link, icon, label }) => {
+    renderMenuItem() {
+        return this.menuItems.map(({ key, link, icon, label }) => {
             return (
                 <Menu.Item key={key}>
                     <a href={link}>
                         <FontAwesomeIcon icon={icon} />&nbsp;
-                                {label}
+                            {label}
                     </a>
                 </Menu.Item>
             )
         })
+    }
+
+    render() {
 
         return (
             <React.Fragment>
@@ -37,7 +39,7 @@ export default class AppHeader extends Component {
                     </Col>
                     <Col xs={12} sm={18} md={18} lg={18} xl={18}>
                         <Menu mode="horizontal" className="app-header-menu">
-                            {renderMenuItem}
+                            {this.renderMenuItem()}
                         </Menu>
                     </Col>
                 </Row>

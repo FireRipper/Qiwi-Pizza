@@ -1,0 +1,92 @@
+.contact-page-background {
+    -webkit-perspective: 1px;
+    perspective: 1px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 0;
+    position: relative;
+}
+
+.contact-page-background .contact-page-background-picture::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: url('../../images/content-contact-page/contact.jpg') no-repeat;
+    background-size: cover;
+}
+
+.contact-page-background .contact-page-background-picture::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: #1783f1;
+    opacity: 0.5;
+}
+
+.contact-page-background-content {
+    text-align: center;
+}
+
+.contact-page-background-content-h2 {
+    padding: calc(11px + 10%) 0 0 0;
+    margin: 0;
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (24 - 16) + 16px) !important;
+    color: #fff !important;
+    text-transform: uppercase;
+}
+
+.contact-page-background-content-p {
+    padding: calc(5px + 1%) 0 calc(11px + 10%) 0;
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (18 - 16) + 16px);
+    color: #fff;
+}
+
+.contact-content {
+    margin-top: -40px;
+}
+
+.contact-content__box {
+    padding: 20px;
+    margin: 5px 10px 5px 10px;
+    background: #fff;
+    text-align: center;
+    border: 1px solid #eaf0f6;
+    box-shadow: 0 1px 3px rgba(255,255,255,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 7px;
+}
+
+.contact-content-box__icon, .contact-content-box__h4, .contact-content-box__p {
+    color: #33475b !important;
+}
+
+.contact-content-box__icon {
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (30 - 16) + 24px);
+    margin: 20px 0;
+}
+
+.contact-content-box__h4 {
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (24 - 16) + 16px) !important;
+}
+
+.contact-content-box__p {
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (15 - 16) + 18px);
+    margin-bottom: 30px;
+}
+
+.contact-content-box__for__link{
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (15 - 16) + 18px);
+}
