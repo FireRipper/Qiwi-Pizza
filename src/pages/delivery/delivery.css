@@ -1,0 +1,95 @@
+.delivery {
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.delivery-steps--to--order {
+    padding: 20px;
+}
+
+.delivery-steps--to--order h2 {
+    color: #33475b !important;
+    text-align: center;
+    font-size: calc((100vw - 480px) / (1280 - 480) * (28 - 16) + 22px) !important;
+}
+
+.delivery-steps--to--order--item h4 {
+    color: #0050b3 !important;
+    font-size: calc((100vw - 480px) / (1280 - 480) * (17 - 16) + 16px);
+}
+
+.delivery-steps--to--order--item div {
+    color: #33475b !important;
+    font-size: calc((100vw - 480px) / (1280 - 480) * (17 - 16) + 14px);
+}
+
+.delivery-alert--operator span, .delivery-content--info--about--fail--order span {
+    font-size: calc((100vw - 480px) / (1280 - 480) * (17 - 16) + 14px);
+}
+
+.delivery-content--short--info, .delivery-content--technology--save--payment--info {
+    padding: 30px !important;
+}
+
+.delivery-content--short--info p, .delivery-content--technology--save--payment--info p {
+    font-size: calc((100vw - 480px) / (1280 - 480) * (18 - 16) + 14px);
+    color: #33475b !important;
+    text-align: justify;
+}
+
+.delivery-content--how-to-pay, .delivery-content--technology--payment {
+    color: #33475b !important;
+    font-weight: 700 !important;
+    font-size: calc((100vw - 480px) / (1280 - 480) * (24 - 16) + 16px) !important;
+}
+
+.delivery-content--how-to-pay--block {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+    padding: 30px 5px;
+    margin: 5px 0;
+}
+
+.delivery-content--how-to-pay--block--blue {
+    background: #1890ff;
+    box-shadow: 0 1px 3px rgba(24, 144, 255, 0.12), 0 1px 2px rgba(24, 144, 255, 0.24)
+}
+
+.delivery-content--how-to-pay--block--green {
+    background: #52c41a;
+    box-shadow: 0 1px 3px rgba(82, 196, 26, 0.12), 0 1px 2px rgba(82, 196, 26, 0.24)
+}
+
+.delivery-content--how-to-pay--block--purple {
+    background: #722ed1;
+    box-shadow: 0 1px 3px rgba(114, 46, 209, 0.12), 0 1px 2px rgba(114, 46, 209, 0.24)
+}
+
+.delivery-content--how-to-pay--block--icon {
+    color: #fff;
+    font-size: calc((100vw - 480px) / (1280 - 480) * (24 - 16) + 18px) !important;
+}
+
+.delivery-content--how-to-pay--block--p {
+    display: inline-block;
+    color: #fff;
+    font-size: calc((100vw - 480px) / (1280 - 480) * (24 - 16) + 16px);
+    margin: 0;
+}
+
+.delivery-content--info--about--fail--order {
+    margin: 10px 0;
+}
+
+.delivery-content--technology--save--payment--h2 {
+    color: #33475b !important;
+    font-size: calc((100vw - 480px) / (1280 - 480) * (24 - 16) + 16px) !important;
+}
+
+.delivery-btn {
+    width: 100%;
+    font-size: calc((100vw - 480px) / (1280 - 480) * (18 - 16) + 13px) !important;
+    margin-bottom: 30px;
+}
