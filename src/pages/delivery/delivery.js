@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Col, Typography, Divider, Row, Alert, List, Button } from 'antd'
+import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Col, Typography, Divider, Row, Alert, List, Button } from 'antd'
 import { faWallet, faCreditCard, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
 
 import './delivery.css'
@@ -29,9 +30,9 @@ export default class Delivery extends Component {
 
     render() {
         return (
-            <Col span={24} className='delivery'>
+            <Col xs={24} lg={{span: 22, offset: 1}} className='delivery'>
                 <Row type='flex'>
-                    <Col lg={24} md={24}>
+                    <Col span={24}>
                         <div className='delivery-steps--to--order'>
                             <Title level={2}>Чтобы оформить заказ сделайте 3 простых шага:</Title>
                             <List
@@ -158,7 +159,7 @@ export default class Delivery extends Component {
                         </p>
                     </Col>
                     <Col xs={{ span: 22, offset: 1 }} md={{ span: 12, offset:6 }}>
-                        <a href='/'><Button type="primary" size='large' className='delivery-btn'>Перейти на главную и заказать вкусную пиццу</Button></a>
+                        <NavLink to='/'><Button type="primary" size='large' className='delivery-btn'>Перейти на главную и заказать вкусную пиццу</Button></NavLink>
                     </Col>
                 </Row>
             </Col>

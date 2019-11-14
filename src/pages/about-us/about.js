@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import { Col, Typography, Button } from 'antd'
 
 import './about.css'
@@ -70,7 +71,7 @@ export default class About extends Component {
             <Fragment>
                 <Col xs={{span: 22, offset: 1}} xl={{span: 18, offset: 3}} className="about">
                     {this.renderContent()}
-                    <a href='/'><Button type="primary" size='large' className='about-btn'>Покушать вкусную пиццу !</Button></a>
+                    <NavLink to='/'><Button type="primary" size='large' className='about-btn'>Покушать вкусную пиццу !</Button></NavLink>
                 </Col>
             </Fragment>
         )

@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
 import { Row, Col, Menu } from 'antd'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPizzaSlice, faTruck, faHeadset, faAddressCard, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
-
+import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import logo from '../../images/logo-qiwi/logo.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPizzaSlice, faTruck, faAddressCard, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+
 import './AppHeader.css'
 
 export default class AppHeader extends Component {
@@ -12,18 +13,17 @@ export default class AppHeader extends Component {
         { key: 'main', link: '/', icon: faPizzaSlice, label: 'Главная' },
         { key: 'about', link: '/about', icon: faInfoCircle, label: 'О нас' },
         { key: 'contact', link: '/contact', icon: faAddressCard, label: 'Контакты' },
-        { key: 'infopay', link: '/infopay', icon: faTruck, label: 'Доставка и оплата' },
-        { key: 'callback', link: '/callback', icon: faHeadset, label: 'Обратная связь' }
+        { key: 'delivery', link: '/delivery', icon: faTruck, label: 'Доставка и оплата' },
     ]
 
     renderMenuItem() {
         return this.menuItems.map(({ key, link, icon, label }) => {
             return (
                 <Menu.Item key={key}>
-                    <a href={link}>
+                    <NavLink to={link}>
                         <FontAwesomeIcon icon={icon} />&nbsp;
                             {label}
-                    </a>
+                    </NavLink>
                 </Menu.Item>
             )
         })
