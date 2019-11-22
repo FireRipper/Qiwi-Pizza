@@ -8,6 +8,7 @@ import Home from '../../pages/home'
 import AppFooter from '../AppFooter/AppFooter'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 
+
 import './App.css'
 
 function App() {

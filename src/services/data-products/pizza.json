@@ -1,0 +1,203 @@
+{
+  "pizza": [
+    {
+      "id": 0,
+      "img_full": "static/img/pizza-img/pizza-img-full-size/burger-pizza-bg.png",
+      "img": "static/img/pizza-img/pizza-img-size-for-card/burger-pizza-bg-card.png",
+      "name": "Бургер Пицца",
+      "description": "Фирменный соус, говяжий фарш, сыр моцарелла, маринованные огурчики, помидор",
+      "category": "pizza",
+      "choose": [
+        {
+          "val": 108,
+          "desc": "(330г.)"
+        },
+        {
+          "val": 145,
+          "desc": "(610г.)"
+        },
+        {
+          "val": 200,
+          "desc": "(880г.)"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "img_full": "static/img/pizza-img/pizza-img-full-size/kurinaya-pizza-bg.png",
+      "img": "static/img/pizza-img/pizza-img-size-for-card/kurinaya-pizza-bg-card.png",
+      "name": "Куриная",
+      "description": "Цезарь соус, сыр моцарелла, куриное филе, помидоры, сладкий перец, шампиньоны",
+      "category": "pizza",
+      "choose": [
+        {
+          "val": 98,
+          "desc": "(330г.)"
+        },
+        {
+          "val": 147,
+          "desc": "(610г.)"
+        },
+        {
+          "val": 199,
+          "desc": "(880г.)"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "img_full": "static/img/pizza-img/pizza-img-full-size/masnaya-pizza-bg.png",
+      "img": "static/img/pizza-img/pizza-img-size-for-card/masnaya-pizza-bg-card.png",
+      "name": "Мясная ",
+      "description": "Соус пилати, бекон, помидоры, сыр моцарелла, сладкий перец, говядина, ветчина, пепперони",
+      "category": "pizza",
+      "choose": [
+        {
+          "val": 115,
+          "desc": "(330г.)"
+        },
+        {
+          "val": 151,
+          "desc": "(610г.)"
+        },
+        {
+          "val": 213,
+          "desc": "(880г.)"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "img_full": "static/img/pizza-img/pizza-img-full-size/barbeku-pizza-bg.png",
+      "img": "static/img/pizza-img/pizza-img-size-for-card/barbeku-pizza-bg-card.png",
+      "name": "Барбекю-Мясная",
+      "description": "Соус барбекю, говядина, сыр моцарелла, курица, сладкий перец, помидор",
+      "category": "pizza",
+      "choose": [
+        {
+          "val": 90,
+          "desc": "(330г.)"
+        },
+        {
+          "val": 142,
+          "desc": "(610г.)"
+        },
+        {
+          "val": 189,
+          "desc": "(880г.)"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "img_full": "static/img/pizza-img/pizza-img-full-size/chili-pizza-bg.png",
+      "img": "static/img/pizza-img/pizza-img-size-for-card/chili-pizza-bg-card.png",
+      "name": "Чили",
+      "description": "Соус пилати, сыр моцарелла, говядина, маслины, халапеньо, колбаски пепперони",
+      "category": "pizza",
+      "choose": [
+        {
+          "val": 120,
+          "desc": "(330г.)"
+        },
+        {
+          "val": 190,
+          "desc": "(610г.)"
+        },
+        {
+          "val": 240,
+          "desc": "(880г.)"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "img_full": "static/img/pizza-img/pizza-img-full-size/4-cheese-pizza-bg.png",
+      "img": "static/img/pizza-img/pizza-img-size-for-card/4-cheese-pizza-bg-card.png",
+      "name": "Четыре сыра",
+      "description": "Соус пилати, сыры: пармезан, маасдам, дор-блю, моцарелла",
+      "category": "pizza",
+      "choose": [
+        {
+          "val": 96,
+          "desc": "(330г.)"
+        },
+        {
+          "val": 185,
+          "desc": "(610г.)"
+        },
+        {
+          "val": 215,
+          "desc": "(880г.)"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "img_full": "static/img/pizza-img/pizza-img-full-size/gribnaya-pizza-bg.png",
+      "img": "static/img/pizza-img/pizza-img-size-for-card/gribnaya-pizza-bg-card.png",
+      "name": "Грибная",
+      "description": "Цезарь соус, сыр моцарелла, чеснок, помидоры, шампиньоны",
+      "category": "pizza",
+      "choose": [
+        {
+          "val": 133,
+          "desc": "(330г.)"
+        },
+        {
+          "val": 195,
+          "desc": "(610г.)"
+        },
+        {
+          "val": 246,
+          "desc": "(880г.)"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "img_full": "static/img/pizza-img/pizza-img-full-size/peperonyy-pizza-bg.png",
+      "img": "static/img/pizza-img/pizza-img-size-for-card/peperonyy-pizza-bg-card.png",
+      "name": "Пепперони",
+      "description": "Соус пилати, сыр моцарелла, сладкий перец, шампиньоны, колбаски пепперони",
+      "category": "pizza",
+      "choose": [
+        {
+          "val": 140,
+          "desc": "(330г.)"
+        },
+        {
+          "val": 205,
+          "desc": "(610г.)"
+        },
+        {
+          "val": 268,
+          "desc": "(880г.)"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "img_full": "static/img/pizza-img/pizza-img-full-size/gavayskaya-pizza-bg.png",
+      "img": "static/img/pizza-img/pizza-img-size-for-card/gavayskaya-pizza-bg-card.png",
+      "name": "Гавайская",
+      "description": "Соус пилати, сыр моцарелла, ветчина, ананас",
+      "category": "pizza",
+      "choose": [
+        {
+          "val": 115,
+          "desc": "(330г.)"
+        },
+        {
+          "val": 187,
+          "desc": "(610г.)"
+        },
+        {
+          "val": 253,
+          "desc": "(880г.)"
+        }
+      ]
+    }
+  ]
+}
+
