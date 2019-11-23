@@ -17,7 +17,7 @@ export default class QiwiPizzaServices {
 
     getAllPizza = () => {
         const res = dataPizza.pizza
-        return res.map(this._transformPizza)
+        return res.map(this._transformPizzaAndSalads)
     }
 
     getPizza = (id) => {
@@ -27,7 +27,7 @@ export default class QiwiPizzaServices {
 
     getAllSalads = () => {
         const res = dataSalads.salads
-        return res.map(this._transformSalads)
+        return res.map(this._transformPizzaAndSalads)
     }
 
     getSalad = (id) => {
@@ -37,7 +37,7 @@ export default class QiwiPizzaServices {
 
     getAllCombination = () => {
         const res = dataCombination.combination
-        return res.map(this._transformCombination)
+        return res.map(this._transformData)
     }
 
     getCombination = (id) => {
@@ -47,7 +47,7 @@ export default class QiwiPizzaServices {
 
     getAllBuggets = () => {
         const res = dataBuggets.buggets
-        return res.map(this._transformBuggets)
+        return res.map(this._transformData)
     }
 
     getBugget = (id) => {
@@ -55,51 +55,27 @@ export default class QiwiPizzaServices {
         return res
     }
 
-    _transformPizza(pizza){
+    _transformPizzaAndSalads(item) {
         return {
-            id: pizza.id,
-            name: pizza.name,
-            description: pizza.description,
-            smallCost: pizza.smallCost,
-            smallDesc: pizza.smallDesc,
-            mediumCost: pizza.mediumCost,
-            mediumDesc: pizza.mediumDesc,
-            largeCost: pizza.largeCost,
-            largeDesc: pizza.largeDesc
+            id: item.id,
+            name: item.name,
+            description: item.description,
+            smallCost: item.smallCost,
+            smallDesc: item.smallDesc,
+            mediumCost: item.mediumCost,
+            mediumDesc: item.mediumDesc,
+            largeCost: item.largeCost,
+            largeDesc: item.largeDesc
         }
     }
 
-    _transformSalads(salad){
+    _transformData(item) {
         return {
-            id: salad.id,
-            name: salad.name,
-            description: salad.description,
-            smallCost: salad.smallCost,
-            smallDesc: salad.smallDesc,
-            mediumCost: salad.mediumCost,
-            mediumDesc: salad.mediumDesc,
-            largeCost: salad.largeCost,
-            largeDesc: salad.largeDesc
+            id: item.id,
+            name: item.name,
+            description: item.description,
+            cost: item.cost
         }
     }
-
-    _transformCombination(combination){
-        return {
-            id: combination.id,
-            name: combination.name,
-            description: combination.description,
-            cost: combination.cost,
-        }
-    }
-
-    _transformBuggets(buget){
-        return {
-            id: buget.id,
-            name: buget.name,
-            description: buget.description,
-            cost: buget.cost,
-        }
-    }
-
 }
 

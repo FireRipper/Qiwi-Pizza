@@ -80,7 +80,7 @@
 }
 
 .contact-content-box__h4 {
-    font-size: calc( (100vw - 480px)/(1280 - 480) * (24 - 16) + 16px) !important;
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (24 - 15) + 17px) !important;
 }
 
 .contact-content-box__p {
@@ -88,5 +88,5 @@
 }
 
 .contact-content-box__for__link, .contact-content-box__p{
-    font-size: calc( (100vw - 480px)/(1280 - 480) * (15 - 16) + 18px);
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (17 - 16) + 16px);
 }
