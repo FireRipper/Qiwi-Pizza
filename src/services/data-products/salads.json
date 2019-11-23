@@ -6,20 +6,12 @@
       "name": "С телятиной",
       "description": "Телятина, помидор, перец, лук крымский, салат, пекинская капуста",
       "category": "salads",
-      "choose": [
-        {
-          "val": 42,
-          "desc": "(150г.)"
-        },
-        {
-          "val": 78,
-          "desc": "(215г.)"
-        },
-        {
-          "val": 98,
-          "desc": "(300г.)"
-        }
-      ]
+      "smallCost": 42,
+      "smallDesc": "(150г.)",
+      "mediumCost": 78,
+      "mediumDesc": "(215г.)",
+      "largeCost": 98,
+      "largeDesc": "(300г.)"
     },
     {
       "id": 1,
@@ -27,21 +19,12 @@
       "name": "С семгой",
       "description": "Салат, помидор, огурец, семга, кунжут, соус унаги",
       "category": "salads",
-      "choose": [
-        {
-          "val": 49,
-          "desc": "(150г.)"
-        },
-        {
-          "val": 83,
-          "desc": "(215г.)"
-        },
-        {
-          "id": 1,
-          "val": 106,
-          "desc": "(300г.)"
-        }
-      ]
+      "smallCost": 49,
+      "smallDesc": "(150г.)",
+      "mediumCost": 83,
+      "mediumDesc": "(215г.)",
+      "largeCost": 106,
+      "largeDesc": "(300г.)"
     },
     {
       "id": 2,
@@ -49,20 +32,12 @@
       "name": "Греческий",
       "description": "Салат, маслины, сыр \"Фета\", помидор, огурец, перец, масло оливковое",
       "category": "salads",
-      "choose": [
-        {
-          "val": 38,
-          "desc": "(150г.)"
-        },
-        {
-          "val": 60,
-          "desc": "(215г.)"
-        },
-        {
-          "val": 89,
-          "desc": "(300г.)"
-        }
-      ]
+      "smallCost": 38,
+      "smallDesc": "(150г.)",
+      "mediumCost": 60,
+      "mediumDesc": "(215г.)",
+      "largeCost": 89,
+      "largeDesc": "(300г.)"
     },
     {
       "id": 3,
@@ -70,20 +45,12 @@
       "name": "Цезарь с курицой",
       "description": "Салат, пекинская капуста, помидор, курица, соус",
       "category": "salads",
-      "choose": [
-        {
-          "val": 27,
-          "desc": "(150г.)"
-        },
-        {
-          "val": 45,
-          "desc": "(215г.)"
-        },
-        {
-          "val": 64,
-          "desc": "(300г.)"
-        }
-      ]
+      "smallCost": 27,
+      "smallDesc": "(150г.)",
+      "mediumCost": 45,
+      "mediumDesc": "(215г.)",
+      "largeCost": 64,
+      "largeDesc": "(300г.)"
     },
     {
       "id": 4,
@@ -91,20 +58,12 @@
       "name": "Овощной",
       "description": "Перец, помидор, огурец, салат, пекинская капуста",
       "category": "salads",
-      "choose": [
-        {
-          "val": 21,
-          "desc": "(150г.)"
-        },
-        {
-          "val": 37,
-          "desc": "(215г.)"
-        },
-        {
-          "val": 59,
-          "desc": "(300г.)"
-        }
-      ]
+      "smallCost": 21,
+      "smallDesc": "(150г.)",
+      "mediumCost": 37,
+      "mediumDesc": "(215г.)",
+      "largeCost": 59,
+      "largeDesc": "(300г.)"
     }
   ]
 }

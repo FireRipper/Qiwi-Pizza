@@ -17,7 +17,7 @@ export default class QiwiPizzaServices {
 
     getAllPizza = () => {
         const res = dataPizza.pizza
-        return res
+        return res.map(this._transformPizza)
     }
 
     getPizza = (id) => {
@@ -27,7 +27,7 @@ export default class QiwiPizzaServices {
 
     getAllSalads = () => {
         const res = dataSalads.salads
-        return res
+        return res.map(this._transformSalads)
     }
 
     getSalad = (id) => {
@@ -37,7 +37,7 @@ export default class QiwiPizzaServices {
 
     getAllCombination = () => {
         const res = dataCombination.combination
-        return res
+        return res.map(this._transformCombination)
     }
 
     getCombination = (id) => {
@@ -47,12 +47,59 @@ export default class QiwiPizzaServices {
 
     getAllBuggets = () => {
         const res = dataBuggets.buggets
-        return res
+        return res.map(this._transformBuggets)
     }
 
     getBugget = (id) => {
         const res = dataBuggets.buggets[id]
         return res
     }
+
+    _transformPizza(pizza){
+        return {
+            id: pizza.id,
+            name: pizza.name,
+            description: pizza.description,
+            smallCost: pizza.smallCost,
+            smallDesc: pizza.smallDesc,
+            mediumCost: pizza.mediumCost,
+            mediumDesc: pizza.mediumDesc,
+            largeCost: pizza.largeCost,
+            largeDesc: pizza.largeDesc
+        }
+    }
+
+    _transformSalads(salad){
+        return {
+            id: salad.id,
+            name: salad.name,
+            description: salad.description,
+            smallCost: salad.smallCost,
+            smallDesc: salad.smallDesc,
+            mediumCost: salad.mediumCost,
+            mediumDesc: salad.mediumDesc,
+            largeCost: salad.largeCost,
+            largeDesc: salad.largeDesc
+        }
+    }
+
+    _transformCombination(combination){
+        return {
+            id: combination.id,
+            name: combination.name,
+            description: combination.description,
+            cost: combination.cost,
+        }
+    }
+
+    _transformBuggets(buget){
+        return {
+            id: buget.id,
+            name: buget.name,
+            description: buget.description,
+            cost: buget.cost,
+        }
+    }
+
 }
 

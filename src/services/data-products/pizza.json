@@ -7,20 +7,12 @@
       "name": "Бургер Пицца",
       "description": "Фирменный соус, говяжий фарш, сыр моцарелла, маринованные огурчики, помидор",
       "category": "pizza",
-      "choose": [
-        {
-          "val": 108,
-          "desc": "(330г.)"
-        },
-        {
-          "val": 145,
-          "desc": "(610г.)"
-        },
-        {
-          "val": 200,
-          "desc": "(880г.)"
-        }
-      ]
+      "smallCost": 108,
+      "smallDesc": "(330г.)",
+      "mediumCost": 145,
+      "mediumDesc": "(610г.)",
+      "largeCost": 200,
+      "largeDesc": "(880г.)"
     },
     {
       "id": 1,
@@ -29,20 +21,12 @@
       "name": "Куриная",
       "description": "Цезарь соус, сыр моцарелла, куриное филе, помидоры, сладкий перец, шампиньоны",
       "category": "pizza",
-      "choose": [
-        {
-          "val": 98,
-          "desc": "(330г.)"
-        },
-        {
-          "val": 147,
-          "desc": "(610г.)"
-        },
-        {
-          "val": 199,
-          "desc": "(880г.)"
-        }
-      ]
+      "smallCost": 98,
+      "smallDesc": "(330г.)",
+      "mediumCost": 147,
+      "mediumDesc": "(610г.)",
+      "largeCost": 199,
+      "largeDesc": "(880г.)"
     },
     {
       "id": 2,
@@ -51,20 +35,12 @@
       "name": "Мясная ",
       "description": "Соус пилати, бекон, помидоры, сыр моцарелла, сладкий перец, говядина, ветчина, пепперони",
       "category": "pizza",
-      "choose": [
-        {
-          "val": 115,
-          "desc": "(330г.)"
-        },
-        {
-          "val": 151,
-          "desc": "(610г.)"
-        },
-        {
-          "val": 213,
-          "desc": "(880г.)"
-        }
-      ]
+      "smallCost": 115,
+      "smallDesc": "(330г.)",
+      "mediumCost": 151,
+      "mediumDesc": "(610г.)",
+      "largeCost": 213,
+      "largeDesc": "(880г.)"
     },
     {
       "id": 3,
@@ -73,20 +49,12 @@
       "name": "Барбекю-Мясная",
       "description": "Соус барбекю, говядина, сыр моцарелла, курица, сладкий перец, помидор",
       "category": "pizza",
-      "choose": [
-        {
-          "val": 90,
-          "desc": "(330г.)"
-        },
-        {
-          "val": 142,
-          "desc": "(610г.)"
-        },
-        {
-          "val": 189,
-          "desc": "(880г.)"
-        }
-      ]
+      "smallCost": 90,
+      "smallDesc": "(330г.)",
+      "mediumCost": 142,
+      "mediumDesc": "(610г.)",
+      "largeCost": 189,
+      "largeDesc": "(880г.)"
     },
     {
       "id": 4,
@@ -95,20 +63,12 @@
       "name": "Чили",
       "description": "Соус пилати, сыр моцарелла, говядина, маслины, халапеньо, колбаски пепперони",
       "category": "pizza",
-      "choose": [
-        {
-          "val": 120,
-          "desc": "(330г.)"
-        },
-        {
-          "val": 190,
-          "desc": "(610г.)"
-        },
-        {
-          "val": 240,
-          "desc": "(880г.)"
-        }
-      ]
+      "smallCost": 120,
+      "smallDesc": "(330г.)",
+      "mediumCost": 190,
+      "mediumDesc": "(610г.)",
+      "largeCost": 240,
+      "largeDesc": "(880г.)"
     },
     {
       "id": 5,
@@ -117,20 +77,12 @@
       "name": "Четыре сыра",
       "description": "Соус пилати, сыры: пармезан, маасдам, дор-блю, моцарелла",
       "category": "pizza",
-      "choose": [
-        {
-          "val": 96,
-          "desc": "(330г.)"
-        },
-        {
-          "val": 185,
-          "desc": "(610г.)"
-        },
-        {
-          "val": 215,
-          "desc": "(880г.)"
-        }
-      ]
+      "smallCost": 96,
+      "smallDesc": "(330г.)",
+      "mediumCost": 185,
+      "mediumDesc": "(610г.)",
+      "largeCost": 215,
+      "largeDesc": "(880г.)"
     },
     {
       "id": 6,
@@ -139,20 +91,12 @@
       "name": "Грибная",
       "description": "Цезарь соус, сыр моцарелла, чеснок, помидоры, шампиньоны",
       "category": "pizza",
-      "choose": [
-        {
-          "val": 133,
-          "desc": "(330г.)"
-        },
-        {
-          "val": 195,
-          "desc": "(610г.)"
-        },
-        {
-          "val": 246,
-          "desc": "(880г.)"
-        }
-      ]
+      "smallCost": 133,
+      "smallDesc": "(330г.)",
+      "mediumCost": 195,
+      "mediumDesc": "(610г.)",
+      "largeCost": 246,
+      "largeDesc": "(880г.)"
     },
     {
       "id": 7,
@@ -161,20 +105,12 @@
       "name": "Пепперони",
       "description": "Соус пилати, сыр моцарелла, сладкий перец, шампиньоны, колбаски пепперони",
       "category": "pizza",
-      "choose": [
-        {
-          "val": 140,
-          "desc": "(330г.)"
-        },
-        {
-          "val": 205,
-          "desc": "(610г.)"
-        },
-        {
-          "val": 268,
-          "desc": "(880г.)"
-        }
-      ]
+      "smallCost": 140,
+      "smallDesc": "(330г.)",
+      "mediumCost": 205,
+      "mediumDesc": "(610г.)",
+      "largeCost": 268,
+      "largeDesc": "(880г.)"
     },
     {
       "id": 8,
@@ -183,20 +119,12 @@
       "name": "Гавайская",
       "description": "Соус пилати, сыр моцарелла, ветчина, ананас",
       "category": "pizza",
-      "choose": [
-        {
-          "val": 115,
-          "desc": "(330г.)"
-        },
-        {
-          "val": 187,
-          "desc": "(610г.)"
-        },
-        {
-          "val": 253,
-          "desc": "(880г.)"
-        }
-      ]
+      "smallCost": 115,
+      "smallDesc": "(330г.)",
+      "mediumCost": 187,
+      "mediumDesc": "(610г.)",
+      "largeCost": 253,
+      "largeDesc": "(880г.)"
     }
   ]
 }
