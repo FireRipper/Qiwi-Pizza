@@ -8,19 +8,15 @@
 }
 
 .main-slider-background__purple {
-    background: url("../../images/slider-images/img_1.jpg") center no-repeat;
+    background: url("../../images/content-home-page/slider-images/img_1.jpg") center no-repeat;
 }
 
 .main-slider-background__blue {
-    background: url("../../images/slider-images/img_2.jpg") center no-repeat;
+    background: url("../../images/content-home-page/slider-images/img_2.jpg") center no-repeat;
 }
 
 .main-slider-background__green {
-    background: url("../../images/slider-images/img_3.jpg") center no-repeat;
-}
-
-.main-slider-background__black {
-    background: url("../../images/slider-images/img_4.jpg") center no-repeat;
+    background: url("../../images/content-home-page/slider-images/img_3.jpg") center no-repeat;
 }
 
 .ant-carousel .slick-slide h3{

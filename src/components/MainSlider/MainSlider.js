@@ -13,9 +13,6 @@ const MainSlider  = () => (
       <div className='main-slider-background__green'>
           <h3>See possibility everywhere</h3>
       </div>
-      <div className='main-slider-background__black'>
-          <h3>Make the most beautiful</h3>
-      </div>
   </Carousel>
 )
 

@@ -3,7 +3,7 @@
     {
       "id": 0,
       "img_full": "static/img/pizza-img/pizza-img-full-size/burger-pizza-bg.png",
-      "img": "static/img/pizza-img/pizza-img-size-for-card/burger-pizza-bg-card.png",
+      "img": "../../images/content-home-page/pizza-img/no-photo-small.jpg",
       "name": "Бургер Пицца",
       "description": "Фирменный соус, говяжий фарш, сыр моцарелла, маринованные огурчики, помидор",
       "category": "pizza",
@@ -17,7 +17,7 @@
     {
       "id": 1,
       "img_full": "static/img/pizza-img/pizza-img-full-size/kurinaya-pizza-bg.png",
-      "img": "static/img/pizza-img/pizza-img-size-for-card/kurinaya-pizza-bg-card.png",
+      "img": "../../images/content-home-page/pizza-img/no-photo-small.jpg",
       "name": "Куриная",
       "description": "Цезарь соус, сыр моцарелла, куриное филе, помидоры, сладкий перец, шампиньоны",
       "category": "pizza",
@@ -31,7 +31,7 @@
     {
       "id": 2,
       "img_full": "static/img/pizza-img/pizza-img-full-size/masnaya-pizza-bg.png",
-      "img": "static/img/pizza-img/pizza-img-size-for-card/masnaya-pizza-bg-card.png",
+      "img": "../../images/content-home-page/pizza-img/no-photo-small.jpg",
       "name": "Мясная ",
       "description": "Соус пилати, бекон, помидоры, сыр моцарелла, сладкий перец, говядина, ветчина, пепперони",
       "category": "pizza",
@@ -45,7 +45,7 @@
     {
       "id": 3,
       "img_full": "static/img/pizza-img/pizza-img-full-size/barbeku-pizza-bg.png",
-      "img": "static/img/pizza-img/pizza-img-size-for-card/barbeku-pizza-bg-card.png",
+      "img": "../../images/content-home-page/pizza-img/no-photo-small.jpg",
       "name": "Барбекю-Мясная",
       "description": "Соус барбекю, говядина, сыр моцарелла, курица, сладкий перец, помидор",
       "category": "pizza",
@@ -59,7 +59,7 @@
     {
       "id": 4,
       "img_full": "static/img/pizza-img/pizza-img-full-size/chili-pizza-bg.png",
-      "img": "static/img/pizza-img/pizza-img-size-for-card/chili-pizza-bg-card.png",
+      "img": "../../images/content-home-page/pizza-img/no-photo-small.jpg",
       "name": "Чили",
       "description": "Соус пилати, сыр моцарелла, говядина, маслины, халапеньо, колбаски пепперони",
       "category": "pizza",
@@ -73,7 +73,7 @@
     {
       "id": 5,
       "img_full": "static/img/pizza-img/pizza-img-full-size/4-cheese-pizza-bg.png",
-      "img": "static/img/pizza-img/pizza-img-size-for-card/4-cheese-pizza-bg-card.png",
+      "img": "../../images/content-home-page/pizza-img/no-photo-small.jpg",
       "name": "Четыре сыра",
       "description": "Соус пилати, сыры: пармезан, маасдам, дор-блю, моцарелла",
       "category": "pizza",
@@ -87,7 +87,7 @@
     {
       "id": 6,
       "img_full": "static/img/pizza-img/pizza-img-full-size/gribnaya-pizza-bg.png",
-      "img": "static/img/pizza-img/pizza-img-size-for-card/gribnaya-pizza-bg-card.png",
+      "img": "../../images/content-home-page/pizza-img/no-photo-small.jpg",
       "name": "Грибная",
       "description": "Цезарь соус, сыр моцарелла, чеснок, помидоры, шампиньоны",
       "category": "pizza",
@@ -101,7 +101,7 @@
     {
       "id": 7,
       "img_full": "static/img/pizza-img/pizza-img-full-size/peperonyy-pizza-bg.png",
-      "img": "static/img/pizza-img/pizza-img-size-for-card/peperonyy-pizza-bg-card.png",
+      "img": "../../images/content-home-page/pizza-img/no-photo-small.jpg",
       "name": "Пепперони",
       "description": "Соус пилати, сыр моцарелла, сладкий перец, шампиньоны, колбаски пепперони",
       "category": "pizza",
@@ -115,7 +115,7 @@
     {
       "id": 8,
       "img_full": "static/img/pizza-img/pizza-img-full-size/gavayskaya-pizza-bg.png",
-      "img": "static/img/pizza-img/pizza-img-size-for-card/gavayskaya-pizza-bg-card.png",
+      "img": "../../images/content-home-page/pizza-img/no-photo-small.jpg",
       "name": "Гавайская",
       "description": "Соус пилати, сыр моцарелла, ветчина, ананас",
       "category": "pizza",
