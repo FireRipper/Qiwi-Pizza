@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import QiwiPizzaServices from '../../services/qiwi-pizza-services'
 import { Button, Card, Col, InputNumber, Row, Select } from 'antd'
-import noPhoto from '../../images/content-home-page/pizza-img/no-photo-small.jpg'
+import noPhoto from '../../images/no-photo/no-photo-2-var/no-photo-var2-570px.png'
 import './CardItems.css'
 
 const { Meta } = Card
