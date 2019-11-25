@@ -11,18 +11,29 @@ export default class CardItems extends Component {
 
     qiwiService = new QiwiPizzaServices()
 
+    defaultSelectValue = 'Выберите...'
+
     state = {
         pizzaList: this.qiwiService.getAllPizza(),
         numberValue: 1,
         totalCost: 0,
         oldCost: 0,
-        selectValue: 'Выберите...'
+        selectValue: this.defaultSelectValue
     }
 
     handleChangeSelectItem = (id, value) => {
         this.setState({
             totalCost: value,
-            oldCost: value
+            oldCost: value,
+            selectValue: value
+        })
+
+        this.clearNumberInput()
+    }
+
+    clearNumberInput() {
+        this.setState({
+            numberValue: 1
         })
     }
 
@@ -32,19 +43,29 @@ export default class CardItems extends Component {
         this.setState({
             numberValue: value
         })
+
+        const { numberValue, totalCost, oldCost, selectValue } = this.state
+
+        console.log(`numberValue ${numberValue}, totalCost ${totalCost}, oldCost ${oldCost}, selectValue ${selectValue}`)
     }
 
     updateTotalCost = (val) => {
-        this.setState(({numberValue, totalCost, oldCost}) => {
-            if (val > numberValue) {
+        this.setState(({ numberValue, totalCost, oldCost }) => {
+            if (val >= 50 || totalCost < 0) {
+                const newCost = oldCost * val
+                return {
+                    numberValue: 1,
+                    totalCost: newCost
+                }
+            } else if (val > numberValue) {
                 const newCost = oldCost * val
                 return {
                     totalCost: newCost
                 }
             } else {
-                const result = totalCost - oldCost
+                const newCost = totalCost - oldCost
                 return {
-                    totalCost: result
+                    totalCost: newCost
                 }
             }
         })
@@ -102,16 +123,18 @@ export default class CardItems extends Component {
                                 <InputNumber
                                     min={1}
                                     defaultValue={this.state.numberValue}
+                                    value={this.state.numberValue}
                                     max={50}
                                     className='card-items-input--number'
                                     onChange={this.handleChangeInputNumber}
+                                    disabled={this.state.oldCost <= 0 ? true : null}
                                 />
                             </Col>
                         </Row>
                         <Row type='flex' align='middle'>
                             <Col xs={24}>
-                                <strong>Итоговая цена:</strong>
-                                <Input value={`${this.state.totalCost} грн.`} />
+                                <Input addonBefore={(<strong>Итоговая цена:</strong>)}
+                                       value={`${this.state.totalCost} грн.`} />
                             </Col>
                             <Col xs={24} className='card-items--button'>
                                 <Button type='primary'>Заказать</Button>
@@ -126,6 +149,9 @@ export default class CardItems extends Component {
     render() {
         const { pizzaList } = this.state
 
+        const { numberValue, totalCost, oldCost, selectValue } = this.state
+
+        console.log(`RENDER: numberValue ${numberValue}, totalCost ${totalCost}, oldCost ${oldCost}, selectValue ${selectValue}`)
         return (
             <Col sm={{ span: 22, offset: 1 }} lg={{ span: 20, offset: 2 }} className='card-items-wrapper--background'>
                 <Row type='flex' align='middle' justify='center'>
