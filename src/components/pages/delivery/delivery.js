@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Col, Typography, Divider, Row, Alert, List, Button } from 'antd'
 import { faWallet, faCreditCard, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
@@ -159,7 +159,7 @@ export default class Delivery extends Component {
                         </p>
                     </Col>
                     <Col xs={{ span: 22, offset: 1 }} md={{ span: 12, offset:6 }}>
-                        <NavLink to='/'><Button type="primary" size='large' className='delivery-btn'>Перейти на главную и заказать вкусную пиццу</Button></NavLink>
+                        <Link to='/'><Button type="primary" size='large' className='delivery-btn'>Перейти на главную и заказать вкусную пиццу</Button></Link>
                     </Col>
                 </Row>
             </Col>

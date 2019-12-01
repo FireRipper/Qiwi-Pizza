@@ -1,6 +1,6 @@
 import { Row, Col, Menu } from 'antd'
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import logo from '../../images/logo-qiwi/logo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPizzaSlice, faTruck, faAddressCard, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
@@ -20,10 +20,10 @@ export default class AppHeader extends Component {
         return this.menuItems.map(({ key, link, icon, label }) => {
             return (
                 <Menu.Item key={key}>
-                    <NavLink to={link}>
+                    <Link to={link}>
                         <FontAwesomeIcon icon={icon} />&nbsp;
                             {label}
-                    </NavLink>
+                    </Link>
                 </Menu.Item>
             )
         })
@@ -35,7 +35,7 @@ export default class AppHeader extends Component {
             <React.Fragment>
                 <Row className='app-header' type='flex' align='middle'>
                     <Col className="app-header-logo" xs={12} sm={6} md={6} lg={6} xl={6}>
-                        <a href="/"><img src={logo} alt="logo" /></a>
+                        <Link to="/"><img src={logo} alt="logo" /></Link>
                     </Col>
                     <Col xs={12} sm={18} md={18} lg={18} xl={18}>
                         <Menu mode="horizontal" className="app-header-menu">

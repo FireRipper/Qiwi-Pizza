@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import QiwiPizzaServices from '../../services/qiwi-pizza-services'
-import { Button, Card, Col, Input, InputNumber, Row, Select } from 'antd'
+import { Button, Card, Col, Input, Row, Select } from 'antd'
 import noPhoto from '../../images/no-photo/no-photo-2-var/no-photo-var2-570px.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBalanceScaleRight, faCartPlus, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 import './CardItems.css'
 
 const { Meta } = Card
@@ -15,63 +17,44 @@ export default class CardItems extends Component {
 
     state = {
         pizzaList: this.qiwiService.getAllPizza(),
-        numberValue: 1,
+        selectedNumberValue: 0,
         totalCost: 0,
-        oldCost: 0,
-        selectValue: this.defaultSelectValue
+        defaultCost: 0,
+        selectValue: this.defaultSelectValue,
+        numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
     }
 
     handleChangeSelectItem = (id, value) => {
         this.setState({
             totalCost: value,
-            oldCost: value,
-            selectValue: value
-        })
-
-        this.clearNumberInput()
-    }
-
-    clearNumberInput() {
-        this.setState({
-            numberValue: 1
+            defaultCost: value,
+            selectValue: value,
+            selectedNumberValue: 1
         })
     }
 
-    handleChangeInputNumber = (value) => {
+    handleChangeSelectNumber = (value) => {
+        console.log(value)
         this.updateTotalCost(value)
 
         this.setState({
-            numberValue: value
+            selectedNumberValue: value
         })
-
-        const { numberValue, totalCost, oldCost, selectValue } = this.state
-
-        console.log(`numberValue ${numberValue}, totalCost ${totalCost}, oldCost ${oldCost}, selectValue ${selectValue}`)
     }
 
     updateTotalCost = (val) => {
-        this.setState(({ numberValue, totalCost, oldCost }) => {
-            if (val >= 50 || totalCost < 0) {
-                const newCost = oldCost * val
+        this.setState(({ selectedNumberValue, defaultCost }) => {
+            if(val > selectedNumberValue || selectedNumberValue > val) {
+                const result = defaultCost * val
                 return {
-                    numberValue: 1,
-                    totalCost: newCost
-                }
-            } else if (val > numberValue) {
-                const newCost = oldCost * val
-                return {
-                    totalCost: newCost
-                }
-            } else {
-                const newCost = totalCost - oldCost
-                return {
-                    totalCost: newCost
+                    totalCost: result
                 }
             }
         })
     }
 
     renderItems(arr) {
+        const { selectValue, selectedNumberValue, defaultCost, totalCost } = this.state
         return arr.map(({
                             id, name, description,
                             smallDesc, smallCost,
@@ -84,13 +67,13 @@ export default class CardItems extends Component {
                      className='card-items'>
                     <Card hoverable
                           cover={<img src={noPhoto} alt={name} />}>
-                        <Meta title='Состав продукта:' description={description} />
+                        <Meta className='card-items--description' title='Состав продукта:' description={description} />
                         <Row type='flex' className='card-items--choose'>
                             <Col span={24}>
-                                <strong>Выберите вес:</strong>
+                                <strong className='card-items--choose--label'><FontAwesomeIcon icon={faBalanceScaleRight} />&nbsp; Выберите вес:</strong>
                             </Col>
                             <Col span={24}>
-                                <Select defaultValue={this.state.selectValue}
+                                <Select defaultValue={selectValue}
                                         onChange={(value) => this.handleChangeSelectItem(id, value)}
                                         className='card-items--select'>
                                     <Option
@@ -117,27 +100,26 @@ export default class CardItems extends Component {
                                 </Select>
                             </Col>
                             <Col span={24}>
-                                <strong>Количество: </strong>
+                                <strong className='card-items-select--number--label'><FontAwesomeIcon icon={faPlusCircle} />&nbsp; Количество: </strong>
                             </Col>
-                            <Col span={24}>
-                                <InputNumber
-                                    min={1}
-                                    defaultValue={this.state.numberValue}
-                                    value={this.state.numberValue}
-                                    max={50}
-                                    className='card-items-input--number'
-                                    onChange={this.handleChangeInputNumber}
-                                    disabled={this.state.oldCost <= 0 ? true : null}
-                                />
-                            </Col>
+                            <Select
+                                defaultValue={selectedNumberValue}
+                                value={selectedNumberValue}
+                                disabled={defaultCost <= 0 ? true : null}
+                                className='card-items-input--number'
+                                onChange={(value) => this.handleChangeSelectNumber(value)}>
+                                {this.generateArrayNumbers()}
+                            </Select>
                         </Row>
                         <Row type='flex' align='middle'>
                             <Col xs={24}>
-                                <Input addonBefore={(<strong>Итоговая цена:</strong>)}
-                                       value={`${this.state.totalCost} грн.`} />
+                                <Input
+                                    addonBefore={(<strong>Итого:</strong>)}
+                                    value={`${totalCost} грн.`}
+                                />
                             </Col>
-                            <Col xs={24} className='card-items--button'>
-                                <Button type='primary'>Заказать</Button>
+                            <Col xs={24}>
+                                <Button type='primary' className='card-items--btn'><FontAwesomeIcon icon={faCartPlus} />&nbsp; Заказать</Button>
                             </Col>
                         </Row>
                     </Card>
@@ -146,12 +128,16 @@ export default class CardItems extends Component {
         })
     }
 
+    generateArrayNumbers() {
+        return this.state.numbers.map((num) => {
+            return <Option key={num} value={num}>{num}</Option>
+        })
+    }
+
     render() {
+        console.log(this.state)
         const { pizzaList } = this.state
 
-        const { numberValue, totalCost, oldCost, selectValue } = this.state
-
-        console.log(`RENDER: numberValue ${numberValue}, totalCost ${totalCost}, oldCost ${oldCost}, selectValue ${selectValue}`)
         return (
             <Col sm={{ span: 22, offset: 1 }} lg={{ span: 20, offset: 2 }} className='card-items-wrapper--background'>
                 <Row type='flex' align='middle' justify='center'>

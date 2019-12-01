@@ -18,17 +18,21 @@
     margin: 15px 0;
 }
 
+.card-items--choose--label, .ant-card-meta-title,
+.card-items-select--number--label, .ant-input-group-addon {
+    color: #33475b !important;
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (17 - 16) + 14px);
+}
+
 .card-items-input--number {
     width: 100% !important;
 }
 
-.card-items--button {
+.card-items--btn {
+    width: 100%;
     margin-top: 15px;
     text-align: center;
-}
-
-.card-items--button>button {
-    width: 100%;
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (16 - 16) + 14px) !important;
 }
 
 @media screen and (max-width: 768px) {
