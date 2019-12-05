@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Col, Typography, Divider, Row, Alert, List, Button } from 'antd'
+import { Col, Typography, Divider, Row, Alert, List } from 'antd'
 import { faWallet, faCreditCard, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
 
 import './delivery.css'
@@ -30,7 +29,7 @@ export default class Delivery extends Component {
 
     render() {
         return (
-            <Col xs={24} lg={{span: 22, offset: 1}} className='delivery'>
+            <Col xs={24} md={{span: 22, offset:1 }} lg={{span: 20, offset: 2}} className='delivery'>
                 <Row type='flex'>
                     <Col span={24}>
                         <div className='delivery-steps--to--order'>
@@ -87,21 +86,21 @@ export default class Delivery extends Component {
                     <Col xs={{ span: 22, offset: 1 }}>
                         <Divider className='delivery-content--how-to-pay'>Как можно оплатить заказ?</Divider>
                     </Col>
-                    <Col xs={{ span: 22, offset: 1 }} md={{ span: 6, offset: 2 }}>
+                    <Col xs={{ span: 22, offset: 1 }} lg={{ span: 6, offset: 2 }}>
                         <div className='delivery-content--how-to-pay--block delivery-content--how-to-pay--block--blue'>
                             <FontAwesomeIcon icon={faWallet}
                                              className='delivery-content--how-to-pay--block--icon' />&nbsp;
                             <p className='delivery-content--how-to-pay--block--p'> - Наличными курьеру</p>
                         </div>
                     </Col>
-                    <Col xs={{ span: 22, offset: 1 }} md={{ span: 6, offset: 1 }}>
+                    <Col xs={{ span: 22, offset: 1 }} lg={{ span: 6, offset: 1 }}>
                         <div className='delivery-content--how-to-pay--block delivery-content--how-to-pay--block--green'>
                             <FontAwesomeIcon icon={faCreditCard}
                                              className='delivery-content--how-to-pay--block--icon' />&nbsp;
                             <p className='delivery-content--how-to-pay--block--p'> - Карточкой курьеру</p>
                         </div>
                     </Col>
-                    <Col xs={{ span: 22, offset: 1 }} md={{ span: 6 }}>
+                    <Col xs={{ span: 22, offset: 1 }} lg={{ span: 6 }}>
                         <div
                             className='delivery-content--how-to-pay--block delivery-content--how-to-pay--block--purple'>
                             <FontAwesomeIcon icon={faMobileAlt}
@@ -157,9 +156,6 @@ export default class Delivery extends Component {
                             максимально
                             безопасны!</strong>
                         </p>
-                    </Col>
-                    <Col xs={{ span: 22, offset: 1 }} md={{ span: 12, offset:6 }}>
-                        <Link to='/'><Button type="primary" size='large' className='delivery-btn'>Перейти на главную и заказать вкусную пиццу</Button></Link>
                     </Col>
                 </Row>
             </Col>

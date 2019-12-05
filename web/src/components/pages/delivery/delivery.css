@@ -6,7 +6,7 @@
 }
 
 .delivery-steps--to--order {
-    padding: 20px;
+    padding: 50px;
 }
 
 .delivery-steps--to--order h2 {
@@ -30,7 +30,7 @@
 }
 
 .delivery-content--short--info, .delivery-content--technology--save--payment--info {
-    padding: 30px !important;
+    padding: 50px !important;
 }
 
 .delivery-content--short--info p, .delivery-content--technology--save--payment--info p {

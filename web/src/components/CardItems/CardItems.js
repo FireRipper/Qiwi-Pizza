@@ -44,7 +44,7 @@ export default class CardItems extends Component {
 
     updateTotalCost = (val) => {
         this.setState(({ selectedNumberValue, defaultCost }) => {
-            if(val > selectedNumberValue || selectedNumberValue > val) {
+            if (val !== selectedNumberValue) {
                 const result = defaultCost * val
                 return {
                     totalCost: result
@@ -70,7 +70,8 @@ export default class CardItems extends Component {
                         <Meta className='card-items--description' title='Состав продукта:' description={description} />
                         <Row type='flex' className='card-items--choose'>
                             <Col span={24}>
-                                <strong className='card-items--choose--label'><FontAwesomeIcon icon={faBalanceScaleRight} />&nbsp; Выберите вес:</strong>
+                                <strong className='card-items--choose--label'><FontAwesomeIcon
+                                    icon={faBalanceScaleRight} />&nbsp; Выберите вес:</strong>
                             </Col>
                             <Col span={24}>
                                 <Select defaultValue={selectValue}
@@ -100,7 +101,8 @@ export default class CardItems extends Component {
                                 </Select>
                             </Col>
                             <Col span={24}>
-                                <strong className='card-items-select--number--label'><FontAwesomeIcon icon={faPlusCircle} />&nbsp; Количество: </strong>
+                                <strong className='card-items-select--number--label'><FontAwesomeIcon
+                                    icon={faPlusCircle} />&nbsp; Количество: </strong>
                             </Col>
                             <Select
                                 defaultValue={selectedNumberValue}
@@ -119,7 +121,8 @@ export default class CardItems extends Component {
                                 />
                             </Col>
                             <Col xs={24}>
-                                <Button type='primary' className='card-items--btn'><FontAwesomeIcon icon={faCartPlus} />&nbsp; Заказать</Button>
+                                <Button type='primary' className='card-items--btn'><FontAwesomeIcon
+                                    icon={faCartPlus} />&nbsp; Заказать</Button>
                             </Col>
                         </Row>
                     </Card>
@@ -135,7 +138,6 @@ export default class CardItems extends Component {
     }
 
     render() {
-        console.log(this.state)
         const { pizzaList } = this.state
 
         return (

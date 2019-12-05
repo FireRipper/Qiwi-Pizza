@@ -1,6 +1,5 @@
 import React, { Fragment, Component } from 'react'
-import { Link } from 'react-router-dom'
-import { Col, Typography, Button } from 'antd'
+import { Col, Typography } from 'antd'
 
 import './about.css'
 
@@ -69,9 +68,8 @@ export default class About extends Component {
     render() {
         return (
             <Fragment>
-                <Col xs={{span: 22, offset: 1}} xl={{span: 18, offset: 3}} className="about">
+                <Col xs={24} md={{span: 22, offset: 1}} xl={{span: 20, offset: 2}} className="about">
                     {this.renderContent()}
-                    <Link to='/'><Button type="primary" size='large' className='about-btn'>Покушать вкусную пиццу !</Button></Link>
                 </Col>
             </Fragment>
         )

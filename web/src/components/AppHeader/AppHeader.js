@@ -34,10 +34,10 @@ export default class AppHeader extends Component {
         return (
             <React.Fragment>
                 <Row className='app-header' type='flex' align='middle'>
-                    <Col className="app-header-logo" xs={12} sm={6} md={6} lg={6} xl={6}>
+                    <Col className="app-header-logo" xs={12} sm={{span: 5, push: 1}} md={{span: 5, push: 1}} lg={{span: 5, push: 2}} xl={{span: 5, push: 1}}>
                         <Link to="/"><img src={logo} alt="logo" /></Link>
                     </Col>
-                    <Col xs={12} sm={18} md={18} lg={18} xl={18}>
+                    <Col xs={12} sm={18} md={18} lg={19} xl={{span: 19, pull: 2}}>
                         <Menu mode="horizontal" className="app-header-menu">
                             {this.renderMenuItem()}
                         </Menu>
