@@ -1,11 +1,11 @@
 import React, { Fragment, Component } from 'react'
 import { Col, Typography } from 'antd'
 
-import './about.css'
+import './about-page.css'
 
 const { Title } = Typography
 
-export default class About extends Component {
+export default class AboutPage extends Component {
 
     aboutContet = [
         {

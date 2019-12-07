@@ -5,15 +5,15 @@ import logo from '../../images/logo-qiwi/logo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPizzaSlice, faTruck, faAddressCard, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 
-import './AppHeader.css'
+import './header.css'
 
-export default class AppHeader extends Component {
+export default class Header extends Component {
 
     menuItems = [
         { key: 'main', link: '/', icon: faPizzaSlice, label: 'Главная' },
         { key: 'about', link: '/about', icon: faInfoCircle, label: 'О нас' },
         { key: 'contact', link: '/contact', icon: faAddressCard, label: 'Контакты' },
-        { key: 'delivery', link: '/delivery', icon: faTruck, label: 'Доставка и оплата' },
+        { key: 'delivery', link: '/delivery', icon: faTruck, label: 'Доставка и оплата' }
     ]
 
     renderMenuItem() {
@@ -22,7 +22,7 @@ export default class AppHeader extends Component {
                 <Menu.Item key={key}>
                     <Link to={link}>
                         <FontAwesomeIcon icon={icon} />&nbsp;
-                            {label}
+                        {label}
                     </Link>
                 </Menu.Item>
             )
@@ -33,12 +33,13 @@ export default class AppHeader extends Component {
 
         return (
             <React.Fragment>
-                <Row className='app-header' type='flex' align='middle'>
-                    <Col className="app-header-logo" xs={12} sm={{span: 5, push: 1}} md={{span: 5, push: 1}} lg={{span: 5, push: 2}} xl={{span: 5, push: 1}}>
+                <Row className='header' type='flex' align='middle'>
+                    <Col className="header-logo" xs={12} sm={{ span: 5, push: 1 }} md={{ span: 5, push: 1 }}
+                         lg={{ span: 5, push: 2 }} xl={{ span: 5, push: 1 }}>
                         <Link to="/"><img src={logo} alt="logo" /></Link>
                     </Col>
-                    <Col xs={12} sm={18} md={18} lg={19} xl={{span: 19, pull: 2}}>
-                        <Menu mode="horizontal" className="app-header-menu">
+                    <Col xs={12} sm={18} md={18} lg={19} xl={{ span: 19, pull: 2 }}>
+                        <Menu mode="horizontal" className="header-menu">
                             {this.renderMenuItem()}
                         </Menu>
                     </Col>

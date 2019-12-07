@@ -1,9 +1,9 @@
 import React, { Fragment, Component } from 'react'
 import { Col, Row, Typography, Icon, Button } from 'antd'
 
-import './contact.css'
+import './contact-page.css'
 
-export default class Contact extends Component {
+export default class ContactPage extends Component {
 
     contactInfo = [
         {

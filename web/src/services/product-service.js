@@ -3,7 +3,7 @@ import * as dataSalads from './data-products/salads'
 import * as dataCombination from './data-products/combination'
 import * as dataBuggets from './data-products/buggets'
 
-export default class QiwiPizzaServices {
+export default class ProductService {
 
     /*getResource = async (url) => {
         const res = await fetch(`${this._apiBase}${url}`)

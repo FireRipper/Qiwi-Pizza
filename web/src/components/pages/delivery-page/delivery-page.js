@@ -3,11 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Col, Typography, Divider, Row, Alert, List } from 'antd'
 import { faWallet, faCreditCard, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
 
-import './delivery.css'
+import './delivery-page.css'
 
 const { Title } = Typography
 
-export default class Delivery extends Component {
+export default class DeliveryPage extends Component {
 
     deliveryContent = [
         {
