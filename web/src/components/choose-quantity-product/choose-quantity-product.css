@@ -1,0 +1,8 @@
+.choose-quantity-product-input--number{
+    width: 100% !important;
+}
+
+.choose-quantity-product--number--label {
+    color: #33475b !important;
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (17 - 16) + 14px);
+}

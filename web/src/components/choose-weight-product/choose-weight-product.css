@@ -1,0 +1,8 @@
+.choose-weight-product--label {
+    color: #33475b !important;
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (17 - 16) + 14px);
+}
+
+.choose-weight-product--select {
+    width: 100% !important;
+}

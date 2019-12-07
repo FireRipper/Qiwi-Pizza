@@ -1,0 +1,23 @@
+.card-list-items {
+    margin: 15px 0 5px 0;
+}
+
+.card-list-items--choose {
+    margin: 15px 0;
+}
+
+.ant-card-meta-title, .ant-input-group-addon {
+    color: #33475b !important;
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (17 - 16) + 14px);
+}
+
+.card-list-items--btn {
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (16 - 16) + 14px) !important;
+}
+
+@media screen and (max-width: 768px) {
+
+}
