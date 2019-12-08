@@ -4,9 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 import { connect } from 'react-redux'
 
-const TotalCostProduct = (props) => {
-
-    const { totalCost } = props
+const TotalCostProduct = ({ totalCost }) => {
 
     return (
         <Row type='flex' align='middle'>
