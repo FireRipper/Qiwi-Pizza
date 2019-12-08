@@ -4,10 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
 import './choose-quantity-product.css'
+import { connect } from 'react-redux'
 
 const { Option } = Select
 
-const ChooseQuantityProduct = ({ defaultValue, defaultCost, numbers, onSelectQuantity }) => {
+const ChooseQuantityProduct = ({ selectedNumberValue, defaultCost, numbers }) => {
 
     const renderOption = numbers.map((num) => {
         return <Option key={num} value={num}>{num}</Option>
@@ -20,11 +21,11 @@ const ChooseQuantityProduct = ({ defaultValue, defaultCost, numbers, onSelectQua
                     <FontAwesomeIcon icon={faPlusCircle} />&nbsp; Количество: </strong>
             </Col>
             <Select
-                defaultValue={defaultValue}
-                value={defaultValue}
+                defaultValue={selectedNumberValue}
+                value={selectedNumberValue}
                 disabled={defaultCost <= 0 ? true : null}
                 className='choose-quantity-product-input--number'
-                onChange={onSelectQuantity}
+                onChange={() => {}}
             >
                 {renderOption}
             </Select>
@@ -32,4 +33,13 @@ const ChooseQuantityProduct = ({ defaultValue, defaultCost, numbers, onSelectQua
     )
 }
 
-export default ChooseQuantityProduct
+const mapStateToProps = ({selectedNumberValue, defaultCost, numbers}) => {
+    return {
+        selectedNumberValue,
+        defaultCost,
+        numbers
+    }
+}
+
+
+export default connect(mapStateToProps)(ChooseQuantityProduct)

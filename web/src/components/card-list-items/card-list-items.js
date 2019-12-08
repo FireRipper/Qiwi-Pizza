@@ -1,19 +1,31 @@
 import React from 'react'
-import { Button, Card, Col, Input, Row } from 'antd'
-import noPhoto from '../../images/no-photo/no-photo-2-var/no-photo-var2-570px.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 import ChooseQuantityProduct from '../choose-quantity-product'
 import ChooseWeightProduct from '../choose-weight-product'
+import TotalCostProduct from '../total-cost-product'
+import noPhoto from '../../images/no-photo/no-photo-2-var/no-photo-var2-570px.png'
+
+import { Card, Col, Row } from 'antd'
+import { connect } from 'react-redux'
+import { productsLoaded } from '../../actions'
+import { compose } from '../../utils'
+import { withProductService } from '../hoc'
 
 import './card-list-items.css'
 
 const { Meta } = Card
 
-const CardListItems = ({ selectValue, selectedNumberValue, defaultCost,
-                           totalCost, arrayProducts, numbers, onSelectWeight, onSelectQuantity }) => {
+class CardListItems extends React.Component {
 
-    const renderProducts = (arr) =>
+    componentDidMount() {
+        // 1, - receive data
+        const { productService } = this.props
+        const data = productService.getAllPizza()
+
+        // 2. - dispatch action to store
+        this.props.productsLoaded(data)
+    }
+
+    renderProducts = (arr) =>
         arr.map(({ id, name, description, smallDesc, smallCost, mediumDesc, mediumCost, largeDesc, largeCost }) => {
             return (
                 <Col xs={{ span: 20 }} sm={{ span: 9, offset: 1 }} md={{ span: 9, offset: 1 }}
@@ -24,40 +36,73 @@ const CardListItems = ({ selectValue, selectedNumberValue, defaultCost,
                               description={description} />
                         <Row type='flex' className='card-list-items--choose'>
                             <ChooseWeightProduct
-                                selectValue={selectValue} largeCost={largeCost}
+                                largeCost={largeCost}
                                 largeDesc={largeDesc} mediumCost={mediumCost}
                                 mediumDesc={mediumDesc} smallCost={smallCost}
                                 smallDesc={smallDesc}
-                                onSelectWeight={onSelectWeight}
                             />
-                            <ChooseQuantityProduct
-                                defaultValue={selectedNumberValue}
-                                defaultCost={defaultCost}
-                                numbers={numbers}
-                                onSelectQuantity={onSelectQuantity}
-                            />
+                            <ChooseQuantityProduct />
                         </Row>
-                        <Row type='flex' align='middle'>
-                            <Col xs={24}>
-                                <Input
-                                    addonBefore={(<strong>Итого:</strong>)}
-                                    value={`${totalCost} грн.`}
-                                />
-                            </Col>
-                            <Col xs={24}>
-                                <Button type='primary' className='card-list-items--btn'>
-                                    <FontAwesomeIcon icon={faCartPlus} />&nbsp; Заказать
-                                </Button>
-                            </Col>
-                        </Row>
+                        <TotalCostProduct />
                     </Card>
                 </Col>
             )
         })
 
-    return (
-        renderProducts(arrayProducts)
-    )
+    render() {
+        const { products } = this.props
+
+        return (
+            this.renderProducts(products)
+        )
+    }
 }
 
-export default CardListItems
+const mapStateToProps = ({ products }) => {
+    return {
+        products
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        productsLoaded: (newProducts) => {
+            dispatch(productsLoaded(newProducts))
+        }
+    }
+    /* return bindActionCreators({ productsLoaded }, dispatch)*/
+}
+
+export default compose(
+    withProductService(),
+    connect(mapStateToProps, mapDispatchToProps)
+)(CardListItems)
+
+/*handleChangeSelectItem = (value) => {
+    this.setState({
+        totalCost: value,
+        defaultCost: value,
+        selectValue: value,
+        selectedNumberValue: 1
+    })
+}
+
+handleChangeSelectNumber = (value) => {
+    this.updateTotalCost(value)
+
+    this.setState({
+        selectedNumberValue: value
+    })
+}
+
+updateTotalCost = (val) => {
+    this.setState(({ selectedNumberValue, defaultCost }) => {
+        if (val !== selectedNumberValue) {
+            const result = defaultCost * val
+            return {
+                totalCost: result
+            }
+        }
+    })
+}*/
+
