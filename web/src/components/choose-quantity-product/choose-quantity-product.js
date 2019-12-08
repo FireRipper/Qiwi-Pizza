@@ -2,9 +2,9 @@ import React, { Fragment } from 'react'
 import { Col, Select } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { connect } from 'react-redux'
 
 import './choose-quantity-product.css'
-import { connect } from 'react-redux'
 
 const { Option } = Select
 
@@ -25,7 +25,8 @@ const ChooseQuantityProduct = ({ selectedNumberValue, defaultCost, numbers }) =>
                 value={selectedNumberValue}
                 disabled={defaultCost <= 0 ? true : null}
                 className='choose-quantity-product-input--number'
-                onChange={() => {}}
+                onChange={() => {
+                }}
             >
                 {renderOption}
             </Select>
@@ -33,13 +34,12 @@ const ChooseQuantityProduct = ({ selectedNumberValue, defaultCost, numbers }) =>
     )
 }
 
-const mapStateToProps = ({selectedNumberValue, defaultCost, numbers}) => {
+const mapStateToProps = ({ selectedNumberValue, defaultCost, numbers }) => {
     return {
         selectedNumberValue,
         defaultCost,
         numbers
     }
 }
-
 
 export default connect(mapStateToProps)(ChooseQuantityProduct)
