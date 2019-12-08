@@ -1,13 +1,18 @@
-
 const initialState = {
-    data: []
+    products: [],
+    selectedNumberValue: 0,
+    totalCost: 0,
+    defaultCost: 0,
+    selectValue: 'Выберите...',
+    numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
 }
 
 const productReducer = (state = initialState, action) => {
     switch (action.type) {
-    case 'DATA_LOADED':
+    case 'PRODUCTS_LOADED':
         return {
-            data: action.payload
+            ...state,
+            products: action.payload
         }
     default:
         return state
