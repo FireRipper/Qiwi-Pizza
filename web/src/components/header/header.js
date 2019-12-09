@@ -34,11 +34,11 @@ export default class Header extends Component {
         return (
             <React.Fragment>
                 <Row className='header' type='flex' align='middle'>
-                    <Col className="header-logo" xs={12} sm={{ span: 5, push: 1 }} md={{ span: 5, push: 1 }}
-                         lg={{ span: 5, push: 2 }} xl={{ span: 5, push: 1 }}>
+                    <Col className="header-logo" xs={12} sm={6} md={6}
+                         lg={8} xl={{ span: 5, push: 1 }}>
                         <Link to="/"><img src={logo} alt="logo" /></Link>
                     </Col>
-                    <Col xs={12} sm={18} md={18} lg={19} xl={{ span: 19, pull: 2 }}>
+                    <Col xs={12} sm={18} md={17} lg={15} xl={15}>
                         <Menu mode="horizontal" className="header-menu">
                             {this.renderMenuItem()}
                         </Menu>

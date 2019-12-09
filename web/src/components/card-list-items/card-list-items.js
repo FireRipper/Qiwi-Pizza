@@ -4,7 +4,7 @@ import ChooseWeightProduct from '../choose-weight-product'
 import TotalCostProduct from '../total-cost-product'
 import noPhoto from '../../images/no-photo/no-photo-2-var/no-photo-var2-570px.png'
 
-import { Card, Col, Row } from 'antd'
+import { Card, Col, Row, Spin } from 'antd'
 import { connect } from 'react-redux'
 import { productsLoaded } from '../../actions'
 import { compose } from '../../utils'
@@ -22,7 +22,9 @@ class CardListItems extends React.Component {
         const { productService, productsLoaded } = this.props
 
         productService.getAllPizza()
-            .then((data) => { productsLoaded(data) })
+            .then((data) => {
+                productsLoaded(data)
+            })
     }
 
     renderProducts = (arr) =>
@@ -50,17 +52,22 @@ class CardListItems extends React.Component {
         })
 
     render() {
-        const { products } = this.props
-        
+        const { products, loading } = this.props
+
+        if (loading) {
+            return <Spin className='card-list-items--spinner' size='large' />
+        }
+
         return (
             this.renderProducts(products)
         )
     }
 }
 
-const mapStateToProps = ({ products }) => {
+const mapStateToProps = ({ products, loading }) => {
     return {
-        products
+        products,
+        loading
     }
 }
 

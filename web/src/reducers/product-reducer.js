@@ -1,5 +1,6 @@
 const initialState = {
     products: [],
+    loading: true,
     selectedNumberValue: 0,
     totalCost: 0,
     defaultCost: 0,
@@ -12,7 +13,8 @@ const productReducer = (state = initialState, action) => {
     case 'PRODUCTS_LOADED':
         return {
             ...state,
-            products: action.payload
+            products: action.payload,
+            loading: false
         }
     default:
         return state

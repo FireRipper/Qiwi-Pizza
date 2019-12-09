@@ -2,6 +2,11 @@
     margin: 15px 0 5px 0;
 }
 
+.card-list-items--spinner {
+    height: 500px;
+    line-height: 500px !important;
+}
+
 .card-list-items--choose {
     margin: 15px 0;
 }
