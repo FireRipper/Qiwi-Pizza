@@ -1,7 +1,5 @@
-import * as dataPizza from './data-products/pizza'
-import * as dataSalads from './data-products/salads'
-import * as dataCombination from './data-products/combination'
-import * as dataBuggets from './data-products/buggets'
+import { _pizza, _salads, _combination, _buggets } from './data-products/data'
+import { _transformPizzaAndSalads, _transformData } from '../utils'
 
 export default class ProductService {
 
@@ -15,67 +13,57 @@ export default class ProductService {
         return res.json()
     }*/
 
+    createPromiseProducts = (data, methodProcessing) => {
+        return new Promise((resolve) => {
+                setTimeout(
+                    () => {
+                        resolve(data.map(methodProcessing))
+                    }, 500)
+            }
+        )
+    }
+
+    createPromiseProduct = (data) => {
+        return new Promise(
+            (resolve) => {
+                setTimeout(
+                    () => {
+                        resolve(data)
+                    }, 500)
+            }
+        )
+    }
+
     getAllPizza = () => {
-        const res = dataPizza.pizza
-        return res.map(this._transformPizzaAndSalads)
+        return this.createPromiseProducts(_pizza, _transformPizzaAndSalads)
     }
 
     getPizza = (id) => {
-        const res = dataPizza.pizza[id]
-        return res
+        return this.createPromiseProduct(_pizza[id])
     }
 
     getAllSalads = () => {
-        const res = dataSalads.salads
-        return res.map(this._transformPizzaAndSalads)
+        return this.createPromiseProducts(_salads, _transformPizzaAndSalads)
     }
 
     getSalad = (id) => {
-        const res = dataSalads.salads[id]
-        return res
+        return this.createPromiseProduct(_salads[id])
     }
 
     getAllCombination = () => {
-        const res = dataCombination.combination
-        return res.map(this._transformData)
+        return this.createPromiseProducts(_combination, _transformData)
     }
 
     getCombination = (id) => {
-        const res = dataCombination.combination[id]
-        return res
+        return this.createPromiseProduct(_combination[id])
     }
 
     getAllBuggets = () => {
-        const res = dataBuggets.buggets
-        return res.map(this._transformData)
+        return this.createPromiseProducts(_buggets, _transformData)
     }
 
     getBugget = (id) => {
-        const res = dataBuggets.buggets[id]
-        return res
-    }
-
-    _transformPizzaAndSalads(item) {
-        return {
-            id: item.id,
-            name: item.name,
-            description: item.description,
-            smallCost: item.smallCost,
-            smallDesc: item.smallDesc,
-            mediumCost: item.mediumCost,
-            mediumDesc: item.mediumDesc,
-            largeCost: item.largeCost,
-            largeDesc: item.largeDesc
-        }
-    }
-
-    _transformData(item) {
-        return {
-            id: item.id,
-            name: item.name,
-            description: item.description,
-            cost: item.cost
-        }
+        return this.createPromiseProduct(_buggets[id])
     }
 }
 

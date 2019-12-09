@@ -18,11 +18,11 @@ class CardListItems extends React.Component {
 
     componentDidMount() {
         // 1, - receive data
-        const { productService } = this.props
-        const data = productService.getAllPizza()
-
         // 2. - dispatch action to store
-        this.props.productsLoaded(data)
+        const { productService, productsLoaded } = this.props
+
+        productService.getAllPizza()
+            .then((data) => { productsLoaded(data) })
     }
 
     renderProducts = (arr) =>
@@ -51,7 +51,7 @@ class CardListItems extends React.Component {
 
     render() {
         const { products } = this.props
-
+        
         return (
             this.renderProducts(products)
         )
