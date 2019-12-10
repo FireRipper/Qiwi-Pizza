@@ -5,6 +5,13 @@ const productsLoaded = (newProducts) => {
     }
 }
 
+const productsRequested = () => {
+    return {
+        type: 'PRODUCTS_REQUESTED'
+    }
+}
+
 export {
-    productsLoaded
+    productsLoaded,
+    productsRequested
 }

@@ -10,6 +10,12 @@ const initialState = {
 
 const productReducer = (state = initialState, action) => {
     switch (action.type) {
+    case 'PRODUCTS_REQUESTED':
+        return {
+            ...state,
+            products: [],
+            loading: true,
+        }
     case 'PRODUCTS_LOADED':
         return {
             ...state,

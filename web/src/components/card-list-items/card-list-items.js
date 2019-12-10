@@ -6,7 +6,7 @@ import noPhoto from '../../images/no-photo/no-photo-2-var/no-photo-var2-570px.pn
 
 import { Card, Col, Row, Spin } from 'antd'
 import { connect } from 'react-redux'
-import { productsLoaded } from '../../actions'
+import { productsLoaded, productsRequested } from '../../actions'
 import { compose } from '../../utils'
 import { withProductService } from '../hoc'
 
@@ -19,8 +19,9 @@ class CardListItems extends React.Component {
     componentDidMount() {
         // 1, - receive data
         // 2. - dispatch action to store
-        const { productService, productsLoaded } = this.props
+        const { productService, productsLoaded, productsRequested } = this.props
 
+        productsRequested()
         productService.getAllPizza()
             .then((data) => {
                 productsLoaded(data)
@@ -75,6 +76,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         productsLoaded: (newProducts) => {
             dispatch(productsLoaded(newProducts))
+        },
+        productsRequested: () => {
+            dispatch(productsRequested())
         }
     }
     /* return bindActionCreators({ productsLoaded }, dispatch)*/

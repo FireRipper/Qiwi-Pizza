@@ -1,5 +1,6 @@
-import { productsLoaded } from './product-actions'
+import { productsLoaded, productsRequested } from './product-actions'
 
 export {
-    productsLoaded
+    productsLoaded,
+    productsRequested
 }
