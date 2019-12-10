@@ -11,19 +11,19 @@ const initialState = {
 
 const productReducer = (state = initialState, action) => {
     switch (action.type) {
-    case 'PRODUCTS_REQUESTED':
+    case 'FETCH_PRODUCTS_REQUEST':
         return {
             ...state,
             products: [],
             loading: true,
         }
-    case 'PRODUCTS_LOADED':
+    case 'FETCH_PRODUCTS_SUCCESS':
         return {
             ...state,
             products: action.payload,
             loading: false
         }
-    case 'PRODUCTS_FETCH_ERROR':
+    case 'FETCH_PRODUCTS_FAILURE':
         return {
             ...state,
             products: [],

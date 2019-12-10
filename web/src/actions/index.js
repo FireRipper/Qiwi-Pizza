@@ -1,11 +1,5 @@
-import {
-    productsLoaded,
-    productsRequested,
-    productsFetchError
-} from './product-actions'
+import { fetchProducts } from './product-actions'
 
 export {
-    productsLoaded,
-    productsRequested,
-    productsFetchError
+    fetchProducts
 }

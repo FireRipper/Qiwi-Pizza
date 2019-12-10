@@ -1,25 +1,42 @@
+import {
+    FETCH_PRODUCTS_SUCCESS,
+    FETCH_PRODUCTS_REQUEST,
+    FETCH_PRODUCTS_FAILURE
+} from '../types'
+
 const productsLoaded = (newProducts) => {
     return {
-        type: 'PRODUCTS_LOADED',
+        type: FETCH_PRODUCTS_SUCCESS,
         payload: newProducts
     }
 }
 
 const productsRequested = () => {
     return {
-        type: 'PRODUCTS_REQUESTED'
+        type: FETCH_PRODUCTS_REQUEST
     }
 }
 
 const productsFetchError = (error) => {
     return {
-        type: 'PRODUCTS_FETCH_ERROR',
+        type: FETCH_PRODUCTS_FAILURE,
         payload: error
     }
 }
 
+// 1, - receive data
+// 2. - dispatch action to store
+const fetchProducts = (productService, dispatch) => () => {
+    dispatch(productsRequested())
+    productService.getAllPizza()
+        .then((data) => {
+            dispatch(productsLoaded(data))
+        })
+        .catch((err) => {
+            dispatch(productsFetchError(err))
+        })
+}
+
 export {
-    productsLoaded,
-    productsRequested,
-    productsFetchError
+    fetchProducts
 }

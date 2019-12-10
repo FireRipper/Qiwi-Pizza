@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import { compose } from '../../utils'
 import { withProductService } from '../hoc'
 import { Card, Col, Row, Spin } from 'antd'
-import { productsLoaded, productsRequested, productsFetchError } from '../../actions'
+import { fetchProducts } from '../../actions'
 
 import './card-list-items.css'
 
@@ -70,36 +70,8 @@ const mapStateToProps = ({ products, loading, error }) => {
     }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-    // 1, - receive data
-    // 2. - dispatch action to store
-    const { productService } = ownProps
-
-    return {
-        fetchProducts: () => {
-            dispatch(productsRequested())
-            productService.getAllPizza()
-                .then((data) => { dispatch(productsLoaded(data)) })
-                .catch((err) => { dispatch(productsFetchError(err)) })
-        }
-    }
-
-    /*return {
-        productsLoaded: (newProducts) => {
-            dispatch(productsLoaded(newProducts))
-        },
-        productsRequested: () => {
-            dispatch(productsRequested())
-        },
-        productsFetchError: (err) => {
-            dispatch(productsFetchError(err))
-        }
-
-    }*/
-    /*return bindActionCreators({
-        productsLoaded,
-        productsRequested,
-        productsFetchError}, dispatch)*/
+const mapDispatchToProps = (dispatch, { productService }) => {
+    return { fetchProducts: fetchProducts(productService, dispatch) }
 }
 
 export default compose(
