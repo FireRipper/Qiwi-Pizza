@@ -11,7 +11,15 @@ const productsRequested = () => {
     }
 }
 
+const productsError = (error) => {
+    return {
+        type: 'PRODUCTS_ERROR',
+        payload: error
+    }
+}
+
 export {
     productsLoaded,
-    productsRequested
+    productsRequested,
+    productsError
 }

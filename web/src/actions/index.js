@@ -1,6 +1,11 @@
-import { productsLoaded, productsRequested } from './product-actions'
+import {
+    productsLoaded,
+    productsRequested,
+    productsError
+} from './product-actions'
 
 export {
     productsLoaded,
-    productsRequested
+    productsRequested,
+    productsError
 }

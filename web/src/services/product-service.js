@@ -14,10 +14,14 @@ export default class ProductService {
     }*/
 
     createPromiseProducts = (data, methodProcessing) => {
-        return new Promise((resolve) => {
+        return new Promise((resolve, reject) => {
                 setTimeout(
                     () => {
-                        resolve(data.map(methodProcessing))
+                        if(Math.random() > 0.75) {
+                            reject(new Error(`Fail: products aren't received from server!!`))
+                        } else {
+                            resolve(data.map(methodProcessing))
+                        }
                     }, 500)
             }
         )
@@ -25,10 +29,11 @@ export default class ProductService {
 
     createPromiseProduct = (data) => {
         return new Promise(
-            (resolve) => {
+            (resolve, reject) => {
                 setTimeout(
                     () => {
                         resolve(data)
+                        reject(new Error(`Fail: product isn't received from server!!`))
                     }, 500)
             }
         )

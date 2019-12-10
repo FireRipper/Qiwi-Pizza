@@ -1,14 +1,15 @@
 import React from 'react'
-import ChooseQuantityProduct from '../choose-quantity-product'
-import ChooseWeightProduct from '../choose-weight-product'
+import ErrorIndicator from '../error-indicator'
 import TotalCostProduct from '../total-cost-product'
+import ChooseWeightProduct from '../choose-weight-product'
+import ChooseQuantityProduct from '../choose-quantity-product'
 import noPhoto from '../../images/no-photo/no-photo-2-var/no-photo-var2-570px.png'
 
-import { Card, Col, Row, Spin } from 'antd'
 import { connect } from 'react-redux'
-import { productsLoaded, productsRequested } from '../../actions'
 import { compose } from '../../utils'
 import { withProductService } from '../hoc'
+import { Card, Col, Row, Spin } from 'antd'
+import { productsLoaded, productsRequested, productsError } from '../../actions'
 
 import './card-list-items.css'
 
@@ -19,13 +20,14 @@ class CardListItems extends React.Component {
     componentDidMount() {
         // 1, - receive data
         // 2. - dispatch action to store
-        const { productService, productsLoaded, productsRequested } = this.props
+        const {
+            productService, productsLoaded,
+            productsRequested, productsError } = this.props
 
         productsRequested()
         productService.getAllPizza()
-            .then((data) => {
-                productsLoaded(data)
-            })
+            .then((data) => { productsLoaded(data) })
+            .catch((err) => { productsError(err) })
     }
 
     renderProducts = (arr) =>
@@ -53,10 +55,14 @@ class CardListItems extends React.Component {
         })
 
     render() {
-        const { products, loading } = this.props
+        const { products, loading, error } = this.props
 
         if (loading) {
             return <Spin className='card-list-items--spinner' size='large' />
+        }
+
+        if(error) {
+            return <ErrorIndicator />
         }
 
         return (
@@ -65,10 +71,11 @@ class CardListItems extends React.Component {
     }
 }
 
-const mapStateToProps = ({ products, loading }) => {
+const mapStateToProps = ({ products, loading, error }) => {
     return {
         products,
-        loading
+        loading,
+        error
     }
 }
 
@@ -79,7 +86,11 @@ const mapDispatchToProps = (dispatch) => {
         },
         productsRequested: () => {
             dispatch(productsRequested())
+        },
+        productsError: (err) => {
+            dispatch(productsError(err))
         }
+
     }
     /* return bindActionCreators({ productsLoaded }, dispatch)*/
 }

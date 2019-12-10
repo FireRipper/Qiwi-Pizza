@@ -1,5 +1,5 @@
 import React from 'react'
-import { Result, Row } from 'antd'
+import { Button, Result, Row } from 'antd'
 
 import './error-indicator.css'
 
@@ -8,9 +8,9 @@ const ErrorIndicator = () => (
         <Result
             status='error'
             title='Critical Error'
-            subTitle='Something has gone terrible wrong!'
-        >
-        </Result>
+            subTitle='Something has gone terrible wrong! Please reload page! '
+            extra={<a href="/"><Button type="primary">Reload page</Button></a>}
+        />
     </Row>
 )
 
