@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import { compose } from '../../utils'
 import { withProductService } from '../hoc'
 import { Card, Col, Row, Spin } from 'antd'
-import { productsLoaded, productsRequested, productsError } from '../../actions'
+import { productsLoaded, productsRequested, productsFetchError } from '../../actions'
 
 import './card-list-items.css'
 
@@ -18,16 +18,7 @@ const { Meta } = Card
 class CardListItems extends React.Component {
 
     componentDidMount() {
-        // 1, - receive data
-        // 2. - dispatch action to store
-        const {
-            productService, productsLoaded,
-            productsRequested, productsError } = this.props
-
-        productsRequested()
-        productService.getAllPizza()
-            .then((data) => { productsLoaded(data) })
-            .catch((err) => { productsError(err) })
+        this.props.fetchProducts()
     }
 
     renderProducts = (arr) =>
@@ -79,20 +70,36 @@ const mapStateToProps = ({ products, loading, error }) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
+    // 1, - receive data
+    // 2. - dispatch action to store
+    const { productService } = ownProps
+
     return {
+        fetchProducts: () => {
+            dispatch(productsRequested())
+            productService.getAllPizza()
+                .then((data) => { dispatch(productsLoaded(data)) })
+                .catch((err) => { dispatch(productsFetchError(err)) })
+        }
+    }
+
+    /*return {
         productsLoaded: (newProducts) => {
             dispatch(productsLoaded(newProducts))
         },
         productsRequested: () => {
             dispatch(productsRequested())
         },
-        productsError: (err) => {
-            dispatch(productsError(err))
+        productsFetchError: (err) => {
+            dispatch(productsFetchError(err))
         }
 
-    }
-    /* return bindActionCreators({ productsLoaded }, dispatch)*/
+    }*/
+    /*return bindActionCreators({
+        productsLoaded,
+        productsRequested,
+        productsFetchError}, dispatch)*/
 }
 
 export default compose(

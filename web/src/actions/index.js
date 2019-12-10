@@ -1,11 +1,11 @@
 import {
     productsLoaded,
     productsRequested,
-    productsError
+    productsFetchError
 } from './product-actions'
 
 export {
     productsLoaded,
     productsRequested,
-    productsError
+    productsFetchError
 }

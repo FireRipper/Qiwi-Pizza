@@ -23,7 +23,7 @@ const productReducer = (state = initialState, action) => {
             products: action.payload,
             loading: false
         }
-    case 'PRODUCTS_ERROR':
+    case 'PRODUCTS_FETCH_ERROR':
         return {
             ...state,
             products: [],
