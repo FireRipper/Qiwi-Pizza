@@ -17,11 +17,8 @@ export default class ProductService {
         return new Promise((resolve, reject) => {
                 setTimeout(
                     () => {
-                        if(Math.random() > 0.75) {
-                            reject(new Error(`Fail: products aren't received from server!!`))
-                        } else {
-                            resolve(data.map(methodProcessing))
-                        }
+                        resolve(data.map(methodProcessing))
+                        reject(new Error(`Fail: products aren't received from server!!`))
                     }, 500)
             }
         )

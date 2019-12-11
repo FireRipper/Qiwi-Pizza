@@ -1,7 +1,9 @@
 import {
     FETCH_PRODUCTS_SUCCESS,
     FETCH_PRODUCTS_REQUEST,
-    FETCH_PRODUCTS_FAILURE
+    FETCH_PRODUCTS_FAILURE,
+    FILL_ARRAY_CHOOSE_MENU,
+    CLEAR_ARRAY_CHOOSE_MENU
 } from '../types'
 
 const productsLoaded = (newProducts) => {
@@ -24,11 +26,25 @@ const productsFetchError = (error) => {
     }
 }
 
+const fillArrayChooseMenu = () => {
+    return {
+        type: FILL_ARRAY_CHOOSE_MENU
+    }
+}
+
+const clearArrayChooseMenu = () => {
+    return {
+        type: CLEAR_ARRAY_CHOOSE_MENU
+    }
+}
+
 // 1, - receive data
 // 2. - dispatch action to store
 const fetchProducts = (productService, dispatch) => () => {
+    dispatch(clearArrayChooseMenu())
+    dispatch(fillArrayChooseMenu())
     dispatch(productsRequested())
-    productService.getAllPizza()
+    productService.getAllSalads()
         .then((data) => {
             dispatch(productsLoaded(data))
         })
