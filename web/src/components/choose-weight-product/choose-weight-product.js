@@ -7,8 +7,10 @@ import { connect } from 'react-redux'
 
 const { Option } = Select
 
-const ChooseWeightProduct = ({ selectValue, smallCost, smallDesc,
-                                 mediumCost, mediumDesc, largeCost, largeDesc }) => {
+const ChooseWeightProduct = ({
+                                 chooseMenu, chooseId, smallCost, smallDesc,
+                                 mediumCost, mediumDesc, largeCost, largeDesc
+                             }) => {
     return (
         <Fragment>
             <Col span={24}>
@@ -17,27 +19,32 @@ const ChooseWeightProduct = ({ selectValue, smallCost, smallDesc,
                 </strong>
             </Col>
             <Col span={24}>
-                <Select defaultValue={selectValue}
-                        onChange={() => {}}
-                        className='choose-weight-product--select'>
-                    <Option value={smallCost}>
-                        <span>{smallCost} грн. {smallDesc}&nbsp;</span>
-                    </Option>
-                    <Option value={mediumCost}>
-                        <span>{mediumCost} грн. {mediumDesc}&nbsp;</span>
-                    </Option>
-                    <Option value={largeCost}>
-                        <span>{largeCost} грн. {largeDesc}&nbsp;</span>
-                    </Option>
-                </Select>
+                {
+                    chooseId === chooseMenu[chooseId].id ?
+                        <Select defaultValue={chooseMenu[chooseId].selectValue}
+                                onChange={() => {
+                                }}
+                                className='choose-weight-product--select'>
+                            <Option value={smallCost}>
+                                <span>{smallCost} грн. {smallDesc}&nbsp;</span>
+                            </Option>
+                            <Option value={mediumCost}>
+                                <span>{mediumCost} грн. {mediumDesc}&nbsp;</span>
+                            </Option>
+                            <Option value={largeCost}>
+                                <span>{largeCost} грн. {largeDesc}&nbsp;</span>
+                            </Option>
+                        </Select>
+                        : null
+                }
             </Col>
         </Fragment>
     )
 }
 
-const mapStateToProps = ({ selectValue }) => {
+const mapStateToProps = ({ chooseMenu }) => {
     return {
-        selectValue
+        chooseMenu
     }
 }
 
