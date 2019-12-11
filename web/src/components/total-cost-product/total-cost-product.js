@@ -1,31 +1,29 @@
 import React from 'react'
-import { Button, Col, Input, Row } from 'antd'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
+import { Col, Input, Row } from 'antd'
 import { connect } from 'react-redux'
+import ButtonOrderProduct from '../button-order-product'
 
-const TotalCostProduct = ({ totalCost }) => {
-
+const TotalCostProduct = ({ totalId, chooseMenu }) => {
     return (
         <Row type='flex' align='middle'>
             <Col xs={24}>
-                <Input
-                    addonBefore={(<strong>Итого:</strong>)}
-                    value={`${totalCost} грн.`}
-                />
+                {
+                    totalId === chooseMenu[totalId].id ?
+                        <Input
+                            addonBefore={(<strong>Итого:</strong>)}
+                            value={`${chooseMenu[totalId].totalCost} грн.`}
+                        />
+                        : null
+                }
             </Col>
-            <Col xs={24}>
-                <Button type='primary' className='card-list-items--btn'>
-                    <FontAwesomeIcon icon={faCartPlus} />&nbsp; Заказать
-                </Button>
-            </Col>
+            <ButtonOrderProduct />
         </Row>
     )
 }
 
-const mapStateToProps = ({ totalCost }) => {
+const mapStateToProps = ({ chooseMenu }) => {
     return {
-        totalCost
+        chooseMenu
     }
 }
 
