@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import ErrorIndicator from '../error-indicator'
 import TotalCostProduct from '../total-cost-product'
 import ChooseWeightProduct from '../choose-weight-product'
@@ -22,24 +22,38 @@ class CardListItems extends React.Component {
     }
 
     renderProducts = (arr) =>
-        arr.map(({ id, name, description, smallDesc, smallCost, mediumDesc, mediumCost, largeDesc, largeCost }) => {
+        arr.map(({ id, name, description, smallDesc, smallCost, mediumDesc, mediumCost, largeDesc, largeCost, cost }) => {
             return (
                 <Col xs={{ span: 20 }} sm={{ span: 9, offset: 1 }} md={{ span: 9, offset: 1 }}
                      lg={{ span: 6, offset: 1 }}
                      key={id} className='card-list-items'>
                     <Card hoverable cover={<img src={noPhoto} alt={name} />}>
                         <Meta className='card-list-items--description' title='Состав продукта:'
-                              description={description} />
-                        <Row type='flex' className='card-list-items--choose'>
-                            <ChooseWeightProduct
-                                largeCost={largeCost}
-                                largeDesc={largeDesc} mediumCost={mediumCost}
-                                mediumDesc={mediumDesc} smallCost={smallCost}
-                                smallDesc={smallDesc}
-                            />
-                            <ChooseQuantityProduct />
-                        </Row>
-                        <TotalCostProduct />
+                              description={description}
+                        />
+                        {
+                            !cost ?
+                                <Fragment>
+                                    <Row type='flex' className='card-list-items--choose'>
+                                        <ChooseWeightProduct
+                                            largeCost={largeCost}
+                                            largeDesc={largeDesc} mediumCost={mediumCost}
+                                            mediumDesc={mediumDesc} smallCost={smallCost}
+                                            smallDesc={smallDesc} chooseId={id}
+                                        />
+                                        <ChooseQuantityProduct quantityId={id} />
+                                    </Row>
+                                    <TotalCostProduct totalId={id} />
+                                </Fragment>
+                                :
+                                <Fragment>
+                                    <Row type='flex' className='card-list-items--choose'>
+                                        <Col span={24} className='card-list-items--default--cost'>Цена: {cost} грн.</Col>
+                                        <ChooseQuantityProduct quantityId={id} />
+                                    </Row>
+                                    <TotalCostProduct totalId={id} />
+                                </Fragment>
+                        }
                     </Card>
                 </Col>
             )
@@ -52,7 +66,7 @@ class CardListItems extends React.Component {
             return <Spin className='card-list-items--spinner' size='large' />
         }
 
-        if(error) {
+        if (error) {
             return <ErrorIndicator />
         }
 
