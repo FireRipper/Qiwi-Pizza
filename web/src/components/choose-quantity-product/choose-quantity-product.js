@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react'
 import { Col, Select } from 'antd'
+import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
-import { connect } from 'react-redux'
 
 import './choose-quantity-product.css'
 
 const { Option } = Select
 
-const ChooseQuantityProduct = ({ selectedNumberValue, defaultCost, numbers }) => {
+const ChooseQuantityProduct = ({ numbers, chooseMenu, quantityId }) => {
 
     const renderOption = numbers.map((num) => {
         return <Option key={num} value={num}>{num}</Option>
@@ -20,25 +20,26 @@ const ChooseQuantityProduct = ({ selectedNumberValue, defaultCost, numbers }) =>
                 <strong className='choose-quantity-product--number--label'>
                     <FontAwesomeIcon icon={faPlusCircle} />&nbsp; Количество: </strong>
             </Col>
-            <Select
-                defaultValue={selectedNumberValue}
-                value={selectedNumberValue}
-                disabled={defaultCost <= 0 ? true : null}
-                className='choose-quantity-product-input--number'
-                onChange={() => {
-                }}
-            >
-                {renderOption}
-            </Select>
+            {
+                quantityId === chooseMenu[quantityId].id ?
+                    <Select
+                        defaultValue={chooseMenu[quantityId].selectedNumberValue}
+                        value={chooseMenu[quantityId].selectedNumberValue}
+                        className='choose-quantity-product-input--number'
+                        onChange={() => {
+                        }}
+                    >
+                        {renderOption}
+                    </Select> : null
+            }
         </Fragment>
     )
 }
 
-const mapStateToProps = ({ selectedNumberValue, defaultCost, numbers }) => {
+const mapStateToProps = ({ numbers, chooseMenu }) => {
     return {
-        selectedNumberValue,
-        defaultCost,
-        numbers
+        numbers,
+        chooseMenu
     }
 }
 
