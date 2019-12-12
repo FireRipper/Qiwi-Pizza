@@ -3,7 +3,8 @@ import {
     FETCH_PRODUCTS_REQUEST,
     FETCH_PRODUCTS_FAILURE,
     FILL_ARRAY_CHOOSE_MENU,
-    CLEAR_ARRAY_CHOOSE_MENU
+    CLEAR_ARRAY_CHOOSE_MENU,
+    SELECT_WEIGHT_PRODUCT
 } from '../types'
 
 const productsLoaded = (newProducts) => {
@@ -38,6 +39,14 @@ const clearArrayChooseMenu = () => {
     }
 }
 
+const selectWeightProduct = (menuId, val) => {
+    return {
+        type: SELECT_WEIGHT_PRODUCT,
+        payload: menuId,
+        value: val
+    }
+}
+
 // 1, - receive data
 // 2. - dispatch action to store
 const fetchProducts = (productService, dispatch) => () => {
@@ -54,5 +63,6 @@ const fetchProducts = (productService, dispatch) => () => {
 }
 
 export {
-    fetchProducts
+    fetchProducts,
+    selectWeightProduct
 }

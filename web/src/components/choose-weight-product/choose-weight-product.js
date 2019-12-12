@@ -2,14 +2,17 @@ import React, { Fragment } from 'react'
 import { Col, Select } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBalanceScaleRight } from '@fortawesome/free-solid-svg-icons'
-import './choose-weight-product.css'
+import { selectWeightProduct } from '../../actions'
 import { connect } from 'react-redux'
+
+import './choose-weight-product.css'
 
 const { Option } = Select
 
 const ChooseWeightProduct = ({
                                  chooseMenu, chooseId, smallCost, smallDesc,
-                                 mediumCost, mediumDesc, largeCost, largeDesc
+                                 mediumCost, mediumDesc, largeCost, largeDesc,
+                                 onSelect
                              }) => {
     return (
         <Fragment>
@@ -22,8 +25,7 @@ const ChooseWeightProduct = ({
                 {
                     chooseId === chooseMenu[chooseId].id ?
                         <Select defaultValue={chooseMenu[chooseId].selectValue}
-                                onChange={() => {
-                                }}
+                                onChange={(value) => onSelect(chooseId, value)}
                                 className='choose-weight-product--select'>
                             <Option value={smallCost}>
                                 <span>{smallCost} грн. {smallDesc}&nbsp;</span>
@@ -48,4 +50,31 @@ const mapStateToProps = ({ chooseMenu }) => {
     }
 }
 
-export default connect(mapStateToProps)(ChooseWeightProduct)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSelect: (id, val) => {
+            dispatch(selectWeightProduct(id, val))
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChooseWeightProduct)
+
+/* handleChangeSelectNumber = (value) => {
+    this.updateTotalCost(value)
+
+    this.setState({
+        selectedNumberValue: value
+    })
+}
+
+updateTotalCost = (val) => {
+    this.setState(({ selectedNumberValue, defaultCost }) => {
+        if (val !== selectedNumberValue) {
+            const result = defaultCost * val
+            return {
+                totalCost: result
+            }
+        }
+    })
+}*/

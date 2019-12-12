@@ -1,3 +1,9 @@
+import {
+    FETCH_PRODUCTS_REQUEST, FETCH_PRODUCTS_SUCCESS,
+    FETCH_PRODUCTS_FAILURE, CLEAR_ARRAY_CHOOSE_MENU,
+    FILL_ARRAY_CHOOSE_MENU, SELECT_WEIGHT_PRODUCT
+} from '../types'
+
 const initialState = {
     products: [],
     loading: true,
@@ -7,32 +13,33 @@ const initialState = {
 }
 
 const productReducer = (state = initialState, action) => {
+
     switch (action.type) {
-    case 'FETCH_PRODUCTS_REQUEST':
+    case FETCH_PRODUCTS_REQUEST:
         return {
             ...state,
             products: [],
-            loading: true,
+            loading: true
         }
-    case 'FETCH_PRODUCTS_SUCCESS':
+    case FETCH_PRODUCTS_SUCCESS:
         return {
             ...state,
             products: action.payload,
             loading: false
         }
-    case 'FETCH_PRODUCTS_FAILURE':
+    case FETCH_PRODUCTS_FAILURE:
         return {
             ...state,
             products: [],
             loading: false,
             error: action.payload
         }
-    case 'CLEAR_ARRAY_CHOOSE_MENU':
+    case CLEAR_ARRAY_CHOOSE_MENU:
         return {
             ...state,
             chooseMenu: []
         }
-    case 'FILL_ARRAY_CHOOSE_MENU':
+    case FILL_ARRAY_CHOOSE_MENU:
         const arrayLength = 15
 
         let filledArray = new Array(arrayLength)
@@ -45,11 +52,54 @@ const productReducer = (state = initialState, action) => {
                 selectValue: 'Выберите...'
             }
         }
-
         return {
             ...state,
-            chooseMenu : filledArray
+            chooseMenu: filledArray
         }
+    case SELECT_WEIGHT_PRODUCT:
+        const { payload, value } = action
+        const menuId = payload
+        const menu = state.chooseMenu.find((menu) => menuId === menu.id)
+        const itemIndex = state.chooseMenu.findIndex(({ id }) => id === menuId)
+        const item = state.chooseMenu[itemIndex]
+        let newMenu
+
+        if (item) {
+            newMenu = {
+                ...item,
+                selectedNumberValue: 1,
+                totalCost: value,
+                defaultCost: value
+            }
+        } else {
+            newMenu = {
+                id: menu.id,
+                selectedNumberValue: 1,
+                totalCost: value,
+                defaultCost: value
+            }
+        }
+
+        if (itemIndex < 0) {
+            return {
+                ...state,
+                chooseMenu: [
+                    ...state.chooseMenu,
+                    newMenu
+                ]
+            }
+        } else {
+            return {
+                ...state,
+                chooseMenu: [
+                    ...state.chooseMenu.slice(0, itemIndex),
+                    newMenu,
+                    ...state.chooseMenu.slice(itemIndex + 1)
+                ]
+            }
+        }
+
+
     default:
         return state
     }

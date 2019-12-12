@@ -92,32 +92,3 @@ export default compose(
     withProductService(),
     connect(mapStateToProps, mapDispatchToProps)
 )(CardListItems)
-
-/*handleChangeSelectItem = (value) => {
-    this.setState({
-        totalCost: value,
-        defaultCost: value,
-        selectValue: value,
-        selectedNumberValue: 1
-    })
-}
-
-handleChangeSelectNumber = (value) => {
-    this.updateTotalCost(value)
-
-    this.setState({
-        selectedNumberValue: value
-    })
-}
-
-updateTotalCost = (val) => {
-    this.setState(({ selectedNumberValue, defaultCost }) => {
-        if (val !== selectedNumberValue) {
-            const result = defaultCost * val
-            return {
-                totalCost: result
-            }
-        }
-    })
-}*/
-

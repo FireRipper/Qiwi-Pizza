@@ -1,5 +1,6 @@
-import { fetchProducts } from './product-actions'
+import { fetchProducts, selectWeightProduct } from './product-actions'
 
 export {
-    fetchProducts
+    fetchProducts,
+    selectWeightProduct
 }
