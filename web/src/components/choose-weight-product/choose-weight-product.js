@@ -59,22 +59,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChooseWeightProduct)
-
-/* handleChangeSelectNumber = (value) => {
-    this.updateTotalCost(value)
-
-    this.setState({
-        selectedNumberValue: value
-    })
-}
-
-updateTotalCost = (val) => {
-    this.setState(({ selectedNumberValue, defaultCost }) => {
-        if (val !== selectedNumberValue) {
-            const result = defaultCost * val
-            return {
-                totalCost: result
-            }
-        }
-    })
-}*/

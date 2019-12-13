@@ -1,10 +1,8 @@
 import {
-    FETCH_PRODUCTS_SUCCESS,
-    FETCH_PRODUCTS_REQUEST,
-    FETCH_PRODUCTS_FAILURE,
-    FILL_ARRAY_CHOOSE_MENU,
-    CLEAR_ARRAY_CHOOSE_MENU,
-    SELECT_WEIGHT_PRODUCT
+    FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_REQUEST,
+    FETCH_PRODUCTS_FAILURE, FILL_ARRAY_CHOOSE_MENU,
+    CLEAR_ARRAY_CHOOSE_MENU, SELECT_WEIGHT_PRODUCT,
+    SELECT_QUANTITY_PRODUCT
 } from '../types'
 
 const productsLoaded = (newProducts) => {
@@ -42,8 +40,16 @@ const clearArrayChooseMenu = () => {
 const selectWeightProduct = (menuId, val) => {
     return {
         type: SELECT_WEIGHT_PRODUCT,
-        payload: menuId,
-        value: val
+        payloadWeight: menuId,
+        valueWeight: val
+    }
+}
+
+const selectQuantityProduct = (menuId, val) => {
+    return {
+        type: SELECT_QUANTITY_PRODUCT,
+        payloadQuantity: menuId,
+        valueQuantity: val
     }
 }
 
@@ -53,7 +59,7 @@ const fetchProducts = (productService, dispatch) => () => {
     dispatch(clearArrayChooseMenu())
     dispatch(fillArrayChooseMenu())
     dispatch(productsRequested())
-    productService.getAllSalads()
+    productService.getAllPizza()
         .then((data) => {
             dispatch(productsLoaded(data))
         })
@@ -64,5 +70,6 @@ const fetchProducts = (productService, dispatch) => () => {
 
 export {
     fetchProducts,
-    selectWeightProduct
+    selectWeightProduct,
+    selectQuantityProduct
 }

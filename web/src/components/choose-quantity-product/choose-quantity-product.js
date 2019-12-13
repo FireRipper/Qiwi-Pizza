@@ -3,12 +3,13 @@ import { Col, Select } from 'antd'
 import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { selectQuantityProduct } from '../../actions'
 
 import './choose-quantity-product.css'
 
 const { Option } = Select
 
-const ChooseQuantityProduct = ({ numbers, chooseMenu, quantityId }) => {
+const ChooseQuantityProduct = ({ numbers, chooseMenu, quantityId, onSelectQuantity }) => {
 
     const renderOption = numbers.map((num) => {
         return <Option key={num} value={num}>{num}</Option>
@@ -23,11 +24,10 @@ const ChooseQuantityProduct = ({ numbers, chooseMenu, quantityId }) => {
             {
                 quantityId === chooseMenu[quantityId].id ?
                     <Select
-                        defaultValue={chooseMenu[quantityId].selectedNumberValue}
+                        defaultValue={0}
                         value={chooseMenu[quantityId].selectedNumberValue}
                         className='choose-quantity-product-input--number'
-                        onChange={() => {
-                        }}
+                        onChange={(value) => onSelectQuantity(quantityId, value)}
                     >
                         {renderOption}
                     </Select> : null
@@ -43,4 +43,12 @@ const mapStateToProps = ({ numbers, chooseMenu }) => {
     }
 }
 
-export default connect(mapStateToProps)(ChooseQuantityProduct)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSelectQuantity: (id, val) => {
+            dispatch(selectQuantityProduct(id, val))
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChooseQuantityProduct)
