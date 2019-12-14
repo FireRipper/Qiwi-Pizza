@@ -1,4 +1,5 @@
-import { fetchProducts, selectWeightProduct, selectQuantityProduct } from './product-actions'
+import { fetchProducts } from './product-actions'
+import {  selectWeightProduct, selectQuantityProduct } from './choose-menu-actions'
 
 export {
     fetchProducts,

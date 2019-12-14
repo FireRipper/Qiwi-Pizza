@@ -36,7 +36,7 @@ const ChooseQuantityProduct = ({ numbers, chooseMenu, quantityId, onSelectQuanti
     )
 }
 
-const mapStateToProps = ({ numbers, chooseMenu }) => {
+const mapStateToProps = ({ productChooseMenu: { numbers, chooseMenu } }) => {
     return {
         numbers,
         chooseMenu

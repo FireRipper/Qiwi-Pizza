@@ -21,7 +21,7 @@ const TotalCostProduct = ({ totalId, chooseMenu }) => {
     )
 }
 
-const mapStateToProps = ({ chooseMenu }) => {
+const mapStateToProps = ({productChooseMenu: { chooseMenu }}) => {
     return {
         chooseMenu
     }

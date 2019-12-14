@@ -44,7 +44,7 @@ const ChooseWeightProduct = ({
     )
 }
 
-const mapStateToProps = ({ chooseMenu }) => {
+const mapStateToProps = ({ productChooseMenu: { chooseMenu }}) => {
     return {
         chooseMenu
     }
