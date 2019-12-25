@@ -1,8 +1,16 @@
 import { fetchProducts } from './product-actions'
-import {  selectWeightProduct, selectQuantityProduct } from './choose-menu-actions'
+import { selectWeightProduct, selectQuantityProduct } from './choose-menu-actions'
+import {
+    productAddedToOrderList, productRemovedFromOrderList
+    , allProductsRemovedFromOrderList, updateCountAndTotalOrder
+} from './order-list-actions'
 
 export {
     fetchProducts,
     selectWeightProduct,
-    selectQuantityProduct
+    selectQuantityProduct,
+    productAddedToOrderList,
+    allProductsRemovedFromOrderList,
+    productRemovedFromOrderList,
+    updateCountAndTotalOrder
 }

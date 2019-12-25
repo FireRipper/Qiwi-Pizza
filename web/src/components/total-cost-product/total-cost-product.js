@@ -1,9 +1,10 @@
 import React from 'react'
 import { Col, Input, Row } from 'antd'
 import { connect } from 'react-redux'
+import { productAddedToOrderList } from '../../actions'
 import ButtonOrderProduct from '../button-order-product'
 
-const TotalCostProduct = ({ totalId, chooseMenu }) => {
+const TotalCostProduct = ({ totalId, chooseMenu, onAddedToList }) => {
     return (
         <Row type='flex' align='middle'>
             <Col xs={24}>
@@ -16,7 +17,7 @@ const TotalCostProduct = ({ totalId, chooseMenu }) => {
                         : null
                 }
             </Col>
-            <ButtonOrderProduct />
+            <ButtonOrderProduct onAddedToList={() => onAddedToList(totalId)} />
         </Row>
     )
 }
@@ -27,4 +28,10 @@ const mapStateToProps = ({productChooseMenu: { chooseMenu }}) => {
     }
 }
 
-export default connect(mapStateToProps)(TotalCostProduct)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onAddedToList: (id) => dispatch(productAddedToOrderList(id))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TotalCostProduct)
