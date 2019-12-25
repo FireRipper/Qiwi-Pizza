@@ -22,7 +22,10 @@ class CardListItems extends React.Component {
     }
 
     renderProducts = (arr) =>
-        arr.map(({ id, name, description, smallDesc, smallCost, mediumDesc, mediumCost, largeDesc, largeCost, cost }) => {
+        arr.map(({ id, name, description, smallDesc,
+                     smallCost, mediumDesc, mediumCost,
+                     largeDesc, largeCost, oneCost, doubleCost,
+                     oneWeight, doubleWeight}) => {
             return (
                 <Col xs={{ span: 20 }} sm={{ span: 9, offset: 1 }} md={{ span: 9, offset: 1 }}
                      lg={{ span: 6, offset: 1 }}
@@ -32,7 +35,7 @@ class CardListItems extends React.Component {
                               description={description}
                         />
                         {
-                            !cost ?
+                            !oneCost ?
                                 <Fragment>
                                     <Row type='flex' className='card-list-items--choose'>
                                         <ChooseWeightProduct
@@ -48,10 +51,13 @@ class CardListItems extends React.Component {
                                 :
                                 <Fragment>
                                     <Row type='flex' className='card-list-items--choose'>
-                                        <Col span={24} className='card-list-items--default--cost'>Цена: {cost} грн.</Col>
+                                        <ChooseWeightProduct
+                                            oneCost={oneCost} doubleCost={doubleCost}
+                                            oneWeight={oneWeight} doubleWeight={doubleWeight}
+                                            chooseId={id} />
                                         <ChooseQuantityProduct quantityId={id} />
                                     </Row>
-                                    <TotalCostProduct totalId={id} />
+                                    <TotalCostProduct totalId={id}/>
                                 </Fragment>
                         }
                     </Card>
@@ -76,7 +82,7 @@ class CardListItems extends React.Component {
     }
 }
 
-const mapStateToProps = ({ products, loading, error }) => {
+const mapStateToProps = ({ productList: { products, loading, error } }) => {
     return {
         products,
         loading,

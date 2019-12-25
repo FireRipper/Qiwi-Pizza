@@ -3,7 +3,6 @@ function _transformPizzaAndSalads(item) {
         id: item.id,
         name: item.name,
         description: item.description,
-        needChooseMenu: item.needChooseMenu,
         smallCost: item.smallCost,
         smallDesc: item.smallDesc,
         mediumCost: item.mediumCost,
@@ -18,8 +17,10 @@ function _transformData(item) {
         id: item.id,
         name: item.name,
         description: item.description,
-        needChooseMenu: item.needChooseMenu,
-        cost: item.cost
+        oneCost: item.oneCost,
+        oneWeight: item.oneWeight,
+        doubleCost: item.doubleCost,
+        doubleWeight: item.doubleWeight,
     }
 }
 

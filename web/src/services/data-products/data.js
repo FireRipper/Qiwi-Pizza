@@ -5,7 +5,6 @@ const _pizza = [
         img: '../../images/content-home-page/pizza-img/no-photo-small.jpg',
         name: 'Бургер Пицца',
         description: 'Фирменный соус, говяжий фарш, сыр моцарелла, маринованные огурчики, помидор',
-        needChooseMenu: true,
         smallCost: 108,
         smallDesc: '(330г.)',
         mediumCost: 145,
@@ -19,7 +18,6 @@ const _pizza = [
         img: '../../images/content-home-page/pizza-img/no-photo-small.jpg',
         name: 'Куриная',
         description: 'Цезарь соус, сыр моцарелла, куриное филе, помидоры, сладкий перец, шампиньоны',
-        needChooseMenu: true,
         smallCost: 98,
         smallDesc: '(330г.)',
         mediumCost: 147,
@@ -33,7 +31,6 @@ const _pizza = [
         img: '../../images/content-home-page/pizza-img/no-photo-small.jpg',
         name: 'Мясная ',
         description: 'Соус пилати, бекон, помидоры, сыр моцарелла, сладкий перец, говядина, ветчина, пепперони',
-        needChooseMenu: true,
         smallCost: 115,
         smallDesc: '(330г.)',
         mediumCost: 151,
@@ -47,7 +44,6 @@ const _pizza = [
         img: '../../images/content-home-page/pizza-img/no-photo-small.jpg',
         name: 'Барбекю-Мясная',
         description: 'Соус барбекю, говядина, сыр моцарелла, курица, сладкий перец, помидор',
-        needChooseMenu: true,
         smallCost: 90,
         smallDesc: '(330г.)',
         mediumCost: 142,
@@ -61,7 +57,6 @@ const _pizza = [
         img: '../../images/content-home-page/pizza-img/no-photo-small.jpg',
         name: 'Чили',
         description: 'Соус пилати, сыр моцарелла, говядина, маслины, халапеньо, колбаски пепперони',
-        needChooseMenu: true,
         smallCost: 120,
         smallDesc: '(330г.)',
         mediumCost: 190,
@@ -75,7 +70,6 @@ const _pizza = [
         img: '../../images/content-home-page/pizza-img/no-photo-small.jpg',
         name: 'Четыре сыра',
         description: 'Соус пилати, сыры: пармезан, маасдам, дор-блю, моцарелла',
-        needChooseMenu: true,
         smallCost: 96,
         smallDesc: '(330г.)',
         mediumCost: 185,
@@ -89,7 +83,6 @@ const _pizza = [
         img: '../../images/content-home-page/pizza-img/no-photo-small.jpg',
         name: 'Грибная',
         description: 'Цезарь соус, сыр моцарелла, чеснок, помидоры, шампиньоны',
-        needChooseMenu: true,
         smallCost: 133,
         smallDesc: '(330г.)',
         mediumCost: 195,
@@ -103,7 +96,6 @@ const _pizza = [
         img: '../../images/content-home-page/pizza-img/no-photo-small.jpg',
         name: 'Пепперони',
         description: 'Соус пилати, сыр моцарелла, сладкий перец, шампиньоны, колбаски пепперони',
-        needChooseMenu: true,
         smallCost: 140,
         smallDesc: '(330г.)',
         mediumCost: 205,
@@ -117,7 +109,6 @@ const _pizza = [
         img: '../../images/content-home-page/pizza-img/no-photo-small.jpg',
         name: 'Гавайская',
         description: 'Соус пилати, сыр моцарелла, ветчина, ананас',
-        needChooseMenu: true,
         smallCost: 115,
         smallDesc: '(330г.)',
         mediumCost: 187,
@@ -133,7 +124,6 @@ const _salads = [
         img: 'static/img/salads-img/salads-img-size-for-card/with-telyatina-salad-bg-card.png',
         name: 'С телятиной',
         description: 'Телятина, помидор, перец, лук крымский, салат, пекинская капуста',
-        needChooseMenu: true,
         smallCost: 42,
         smallDesc: '(150г.)',
         mediumCost: 78,
@@ -146,7 +136,6 @@ const _salads = [
         img: 'static/img/salads-img/salads-img-size-for-card/with-semga-salad-bg-card.png',
         name: 'С семгой',
         description: 'Салат, помидор, огурец, семга, кунжут, соус унаги',
-        needChooseMenu: true,
         smallCost: 49,
         smallDesc: '(150г.)',
         mediumCost: 83,
@@ -159,7 +148,6 @@ const _salads = [
         img: 'static/img/salads-img/salads-img-size-for-card/grecheskiy-salad-bg-card.png',
         name: 'Греческий',
         description: 'Салат, маслины, сыр "Фета", помидор, огурец, перец, масло оливковое',
-        needChooseMenu: true,
         smallCost: 38,
         smallDesc: '(150г.)',
         mediumCost: 60,
@@ -172,7 +160,6 @@ const _salads = [
         img: 'static/img/salads-img/salads-img-size-for-card/tsezar-with-chicken-salad-bg-card.png',
         name: 'Цезарь с курицой',
         description: 'Салат, пекинская капуста, помидор, курица, соус',
-        needChooseMenu: true,
         smallCost: 27,
         smallDesc: '(150г.)',
         mediumCost: 45,
@@ -185,7 +172,6 @@ const _salads = [
         img: 'static/img/salads-img/salads-img-size-for-card/ovoschnoj-salad-bg-card.png',
         name: 'Овощной',
         description: 'Перец, помидор, огурец, салат, пекинская капуста',
-        needChooseMenu: true,
         smallCost: 21,
         smallDesc: '(150г.)',
         mediumCost: 37,
@@ -201,24 +187,30 @@ const _combination = [
         img: 'static/img/set-of-img/set-of-img-size-for-card/set-of-number-1-bg-card.png',
         name: 'Пицца сэт №1',
         description: 'Мини Пицца "Грибная", мини Пицца "Чили", мини Пицца "Мясная"',
-        needChooseMenu: false,
-        cost: 356
+        oneCost: 356,
+        oneWeight: '990г.',
+        doubleCost: 712,
+        doubleWeight: '1980г.',
     },
     {
         id: 1,
         img: 'static/img/set-of-img/set-of-img-size-for-card/set-of-number-2-bg-card.png',
         name: 'Пицца сэт №2',
         description: 'Мини Пицца "Гавайская", мини Пицца "Барбекю-Мясная", мини Пицца "Четыре сыра"',
-        needChooseMenu: false,
-        cost: 300
+        oneCost: 270,
+        oneWeight: '990г.',
+        doubleCost: 540,
+        doubleWeight: '1980г.',
     },
     {
         id: 2,
         img: 'static/img/set-of-img/set-of-img-size-for-card/set-of-number-3-bg-card.png',
         name: 'Пицца сэт №3',
         description: 'Мини Пицца "Пепперони", мини Пицца "Бургер Пицца", мини Пицца "Куриная"',
-        needChooseMenu: false,
-        cost: 325
+        oneCost: 325,
+        oneWeight: '990г.',
+        doubleCost: 650,
+        doubleWeight: '1980г.'
     }
 ]
 
@@ -228,48 +220,60 @@ const _buggets = [
         img: 'static/img/buggets-img/buggets-img-size-for-card/with-chiken-bugget-bg-card.png',
         name: 'С курицей',
         description: 'Багет, майонез, салат айсберг, сыр, помидоры, огурцы маринованные, филе курицы гриль',
-        needChooseMenu: false,
-        cost: 55
+        oneCost: 28,
+        oneWeight: '230г.',
+        doubleCost: 56,
+        doubleWeight: '460г.'
     },
     {
         id: 1,
         img: 'static/img/buggets-img/buggets-img-size-for-card/with-buzhenina-bugget-bg-card.png',
         name: 'С бужениной',
         description: 'Багет, буженина, сыр, кукуруза, помидор, майонез горчица.',
-        needChooseMenu: false,
-        cost: 40
+        oneCost: 30,
+        oneWeight: '210г.',
+        doubleCost: 60,
+        doubleWeight: '410г.'
     },
     {
         id: 2,
         img: 'static/img/buggets-img/buggets-img-size-for-card/with-vetchina-bugget-bg-card.png',
         name: 'С ветчиной',
         description: 'Багет, майонез, сыр, ветчина, зелень, базилик',
-        needChooseMenu: false,
-        cost: 43
+        oneCost: 43,
+        oneWeight: '310г.',
+        doubleCost: 86,
+        doubleWeight: '610г.'
     },
     {
         id: 3,
         img: 'static/img/buggets-img/buggets-img-size-for-card/with-cheese-and-tomato-bugget-bg-card.png',
         name: 'С сыром и помидорами',
         description: 'Багет, помидоры, сыр, зелень, майонез',
-        needChooseMenu: false,
-        cost: 30
+        oneCost: 27,
+        oneWeight: '200г.',
+        doubleCost: 54,
+        doubleWeight: '400г..'
     },
     {
         id: 4,
         img: 'static/img/buggets-img/buggets-img-size-for-card/with-cheese-and-garlic-bugget-bg-card.png',
         name: 'С чесноком и сыром',
         description: 'Багет, сыр, чеснок, масло, зелень, специи',
-        needChooseMenu: false,
-        cost: 28
+        oneCost: 28,
+        oneWeight: '215г.',
+        doubleCost: 56,
+        doubleWeight: '430г.'
     },
     {
         id: 5,
         img: 'static/img/buggets-img/buggets-img-size-for-card/with-cheese-and-bacon-bugget-bg-card.png',
         name: 'С беконом и сыром',
         description: 'Багет, майонез, твердый сыр, бекон, зеленый лук',
-        needChooseMenu: false,
-        cost: 35
+        oneCost: 32,
+        oneWeight: '250г.',
+        doubleCost: 64,
+        doubleWeight: '500г.'
     }
 ]
 

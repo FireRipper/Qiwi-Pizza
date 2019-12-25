@@ -12,8 +12,42 @@ const { Option } = Select
 const ChooseWeightProduct = ({
                                  chooseMenu, chooseId, smallCost, smallDesc,
                                  mediumCost, mediumDesc, largeCost, largeDesc,
-                                 onSelect
+                                 onSelect, oneCost, doubleCost, oneWeight, doubleWeight
                              }) => {
+
+    const renderChoose = (chooseId) => {
+
+        if (oneCost || doubleCost) {
+            return (
+                <Select defaultValue={chooseMenu[chooseId].selectValue}
+                        onChange={(value) => onSelect(chooseId, value)}
+                        className='choose-weight-product--select'>
+                    <Option value={oneCost}>
+                        <span>{oneCost} грн. - {oneWeight} </span>
+                    </Option>
+                    <Option value={doubleCost}>
+                        <span>{doubleCost} грн. - {doubleWeight} </span>
+                    </Option>
+                </Select>
+            )
+        }
+        return (
+            <Select defaultValue={chooseMenu[chooseId].selectValue}
+                    onChange={(value) => onSelect(chooseId, value)}
+                    className='choose-weight-product--select'>
+                <Option value={smallCost}>
+                    <span>{smallCost} грн. {smallDesc}&nbsp;</span>
+                </Option>
+                <Option value={mediumCost}>
+                    <span>{mediumCost} грн. {mediumDesc}&nbsp;</span>
+                </Option>
+                <Option value={largeCost}>
+                    <span>{largeCost} грн. {largeDesc}&nbsp;</span>
+                </Option>
+            </Select>
+        )
+    }
+
     return (
         <Fragment>
             <Col span={24}>
@@ -24,19 +58,7 @@ const ChooseWeightProduct = ({
             <Col span={24}>
                 {
                     chooseId === chooseMenu[chooseId].id ?
-                        <Select defaultValue={chooseMenu[chooseId].selectValue}
-                                onChange={(value) => onSelect(chooseId, value)}
-                                className='choose-weight-product--select'>
-                            <Option value={smallCost}>
-                                <span>{smallCost} грн. {smallDesc}&nbsp;</span>
-                            </Option>
-                            <Option value={mediumCost}>
-                                <span>{mediumCost} грн. {mediumDesc}&nbsp;</span>
-                            </Option>
-                            <Option value={largeCost}>
-                                <span>{largeCost} грн. {largeDesc}&nbsp;</span>
-                            </Option>
-                        </Select>
+                        renderChoose(chooseId)
                         : null
                 }
             </Col>
@@ -44,7 +66,7 @@ const ChooseWeightProduct = ({
     )
 }
 
-const mapStateToProps = ({ productChooseMenu: { chooseMenu }}) => {
+const mapStateToProps = ({ productChooseMenu: { chooseMenu } }) => {
     return {
         chooseMenu
     }

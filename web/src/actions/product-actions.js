@@ -27,7 +27,7 @@ const fetchProducts = (productService, dispatch) => () => {
     dispatch(clearArrayChooseMenu())
     dispatch(fillArrayChooseMenu())
     dispatch(productsRequested())
-    productService.getAllSalads()
+    productService.getAllBuggets()
         .then((data) => {
             dispatch(productsLoaded(data))
         })
