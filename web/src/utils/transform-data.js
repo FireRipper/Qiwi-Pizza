@@ -1,7 +1,7 @@
 function _transformPizzaAndSalads(item) {
     return {
         id: item.id,
-        name: item.name,
+        title: item.title,
         description: item.description,
         smallCost: item.smallCost,
         smallDesc: item.smallDesc,
@@ -15,7 +15,7 @@ function _transformPizzaAndSalads(item) {
 function _transformData(item) {
     return {
         id: item.id,
-        name: item.name,
+        title: item.title,
         description: item.description,
         oneCost: item.oneCost,
         oneWeight: item.oneWeight,

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Col, Row } from 'antd'
 import CardListItems from '../card-list-items'
+import OrderListProducts from '../order-list-products'
 
 import './card-list.css'
 
@@ -9,6 +10,9 @@ const CardList = () => (
          className='card-list-wrapper--background'>
         <Row type='flex' align='middle' justify='center'>
             <CardListItems />
+        </Row>
+        <Row type='flex' align='middle' justify='center'>
+            <OrderListProducts />
         </Row>
     </Col>
 )

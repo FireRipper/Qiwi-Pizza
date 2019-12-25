@@ -22,7 +22,7 @@ class CardListItems extends React.Component {
     }
 
     renderProducts = (arr) =>
-        arr.map(({ id, name, description, smallDesc,
+        arr.map(({ id, title, description, smallDesc,
                      smallCost, mediumDesc, mediumCost,
                      largeDesc, largeCost, oneCost, doubleCost,
                      oneWeight, doubleWeight}) => {
@@ -30,7 +30,7 @@ class CardListItems extends React.Component {
                 <Col xs={{ span: 20 }} sm={{ span: 9, offset: 1 }} md={{ span: 9, offset: 1 }}
                      lg={{ span: 6, offset: 1 }}
                      key={id} className='card-list-items'>
-                    <Card hoverable cover={<img src={noPhoto} alt={name} />}>
+                    <Card hoverable cover={<img src={noPhoto} alt={title} />}>
                         <Meta className='card-list-items--description' title='Состав продукта:'
                               description={description}
                         />
