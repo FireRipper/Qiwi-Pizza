@@ -1,30 +1,44 @@
 import React from 'react'
-import { Button, Col, Icon, Row, Typography } from 'antd'
+import { Button, Col, Icon, Row, Typography, Radio } from 'antd'
 import { connect } from 'react-redux'
-import { allProductsRemovedFromOrderList, productRemovedFromOrderList, updateCountAndTotalOrder } from '../../actions'
+import {
+    allProductsRemovedFromOrderList, productRemovedFromOrderList,
+    updateCountAndTotalOrder, updateValueRadioBtnInOrderList
+} from '../../actions'
 
 import './order-list-products.css'
 
 const { Title } = Typography
 
-const OrderListProducts = ({ items, totalPrice, onIncrease, onDecrease, onDeleteAll }) => {
+const OrderListProducts = ({ items, totalPrice, onIncrease, onDecrease, onDeleteAll, onChangeRadio }) => {
 
     const renderRow = (item, idx) => {
-        const { id, title, count, total } = item
-
+        const {
+            id, title, count, total, smCount, mdCount,
+            lgCount, smWeight, mdWeight, lgWeight,
+            smPrice, mdPrice, lgPrice, currentValue
+        } = item
+        const { Group } = Radio
         return (
             <tr key={id}>
                 <td>{idx + 1}</td>
                 <td>{title}</td>
+                <td>
+                    <Group defaultValue={currentValue} onChange={(e) => onChangeRadio(id, e.target.value)}>
+                        <Radio value={smPrice} disabled={!smCount ? true : null}>{smCount} шт. - {smWeight}</Radio>
+                        <Radio value={mdPrice} disabled={!mdCount ? true : null}>{mdCount} шт. - {mdWeight}</Radio>
+                        <Radio value={lgPrice} disabled={!lgCount ? true : null}>{lgCount} шт. - {lgWeight}</Radio>
+                    </Group>
+                </td>
                 <td>{count}</td>
                 <td>{`${total} грн.`}</td>
                 <td className='order-list-products--btn--action'>
                     <Button
-                        onClick={(id) => onIncrease(id)}
-                        size='small'><Icon type="plus" /></Button>
-                    <Button
                         onClick={(id) => onDecrease(id)}
                         type='primary' size='small'><Icon type="minus" /></Button>
+                    <Button
+                        onClick={(id) => onIncrease(id)}
+                        size='small'><Icon type="plus" /></Button>
                     <Button
                         onClick={(id) => onDeleteAll(id)}
                         type='danger' size='small'><Icon type="delete" /></Button>
@@ -34,7 +48,7 @@ const OrderListProducts = ({ items, totalPrice, onIncrease, onDecrease, onDelete
     }
 
     return (
-        <Col lg={{ span: 20, offset: 2 }}>
+        <Col span={24}>
             <Row type='flex' align='middle' className='order-list-products'>
                 <Col xs={{ span: 22, offset: 1 }}><Title level={3}>Ваш заказ:</Title></Col>
                 <Col lg={{ span: 22, offset: 1 }}>
@@ -43,6 +57,7 @@ const OrderListProducts = ({ items, totalPrice, onIncrease, onDecrease, onDelete
                         <tr>
                             <th>#</th>
                             <th>Название</th>
+                            <th>Вес (Кол-во)</th>
                             <th>Кол-во</th>
                             <th>Цена</th>
                             <th>Действия</th>
@@ -72,7 +87,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onIncrease: (id) => dispatch(updateCountAndTotalOrder(id)),
         onDecrease: (id) => dispatch(productRemovedFromOrderList(id)),
-        onDeleteAll: (id) => dispatch(allProductsRemovedFromOrderList(id))
+        onDeleteAll: (id) => dispatch(allProductsRemovedFromOrderList(id)),
+        onChangeRadio: (id, e)=> dispatch(updateValueRadioBtnInOrderList(id, e))
     }
 }
 
