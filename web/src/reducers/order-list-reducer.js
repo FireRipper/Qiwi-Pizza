@@ -67,6 +67,26 @@ const updateListItem = (product, countProducts, item) => {
     }
 }
 
+const addedToListProducts = (state, productId) => {
+    const { productList: { products }, productChooseMenu: { chooseMenu }, orderList: { list } } = state
+
+    const product = products.find(({ id }) => id === productId)
+    const countAndCost = chooseMenu.find(({ id }) => id === productId)
+
+    if (!countAndCost.defaultCost) {
+        return {
+            ...state.orderList
+        }
+    } else {
+        const itemIndex = list.findIndex(({ id }) => id === productId)
+        const item = list[itemIndex]
+
+        const newItem = updateListItem(product, countAndCost, item)
+
+        return updateTotal(list, state.orderList, countAndCost, newItem, itemIndex)
+    }
+}
+
 const updateProductOrderList = (state, action) => {
 
     if (state === undefined) {
@@ -78,17 +98,7 @@ const updateProductOrderList = (state, action) => {
 
     switch (action.type) {
     case PRODUCT_ADDED_TO_ORDER_LIST:
-        const { productList: { products }, productChooseMenu: { chooseMenu }, orderList: { list } } = state
-
-        const productId = action.payload
-        const product = products.find(({ id }) => id === productId)
-        const countAndCost = chooseMenu.find(({ id }) => id === productId)
-        const itemIndex = list.findIndex(({ id }) => id === productId)
-        const item = list[itemIndex]
-
-        const newItem = updateListItem(product, countAndCost, item)
-
-        return updateTotal(list, state.orderList, countAndCost, newItem, itemIndex)
+        return addedToListProducts(state, action.payload)
 
     case UPDATE_COUNT_AND_TOTAL_ORDER:
         return {

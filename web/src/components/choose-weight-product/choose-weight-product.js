@@ -17,7 +17,7 @@ const ChooseWeightProduct = ({
 
     const renderChoose = (chooseId) => {
 
-        if (oneCost || doubleCost) {
+        if (oneCost && doubleCost) {
             return (
                 <Select defaultValue={chooseMenu[chooseId].selectValue}
                         onChange={(value) => onSelect(chooseId, value)}
