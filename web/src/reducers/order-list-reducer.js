@@ -5,19 +5,47 @@ import {
     UPDATE_COUNT_AND_TOTAL_ORDER
 } from '../types'
 
-const updateList = (List, item, idx) => {
+const updateList = (list, item, idx) => {
+    if (item.count === 0) {
+        return [
+            ...list.slice(0, idx),
+            ...list.slice(idx + 1)
+        ]
+    }
+
     if (idx === -1) {
         return [
-            ...List,
+            ...list,
             item
         ]
     }
 
     return [
-        ...List.slice(0, idx),
+        ...list.slice(0, idx),
         item,
-        ...List.slice(idx + 1)
+        ...list.slice(idx + 1)
     ]
+}
+
+const updateTotal = (arr, orderList, countCost, newItem, itemIndex) => {
+    if (arr.length > 0) {
+
+        const newTotal = arr.reduce(function (prevVal, curVal) {
+                return {
+                    total: prevVal.total + curVal.total
+                }
+            }
+        )
+        return {
+            totalPrice: newTotal.total + countCost.totalCost,
+            list: updateList(orderList.list, newItem, itemIndex)
+        }
+    } else {
+        return {
+            list: updateList(orderList.list, newItem, itemIndex),
+            totalPrice: countCost.totalCost
+        }
+    }
 }
 
 const updateListItem = (product, countProducts, item) => {
@@ -32,9 +60,7 @@ const updateListItem = (product, countProducts, item) => {
         return {
             id: product.id,
             title: product.title,
-            smallPrice: 0,
-            middlePrice: 0,
-            largePrice: 0,
+            price: countProducts.defaultCost,
             count: countProducts.selectedNumberValue,
             total: countProducts.totalCost
         }
@@ -46,7 +72,7 @@ const updateProductOrderList = (state, action) => {
     if (state === undefined) {
         return {
             list: [],
-            total: 0
+            totalPrice: 0
         }
     }
 
@@ -60,12 +86,10 @@ const updateProductOrderList = (state, action) => {
         const itemIndex = list.findIndex(({ id }) => id === productId)
         const item = list[itemIndex]
 
-        let newItem = updateListItem(product, countAndCost, item)
+        const newItem = updateListItem(product, countAndCost, item)
 
-        return {
-            ...state.orderList,
-            list: updateList(state.orderList.list, newItem, itemIndex)
-        }
+        return updateTotal(list, state.orderList, countAndCost, newItem, itemIndex)
+
     case UPDATE_COUNT_AND_TOTAL_ORDER:
         return {
             ...state.orderList

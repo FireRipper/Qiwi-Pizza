@@ -7,7 +7,7 @@ import './order-list-products.css'
 
 const { Title } = Typography
 
-const OrderListProducts = ({ items, allTotal, onIncrease, onDecrease, onDeleteAll }) => {
+const OrderListProducts = ({ items, totalPrice, onIncrease, onDecrease, onDeleteAll }) => {
 
     const renderRow = (item, idx) => {
         const { id, title, count, total } = item
@@ -54,17 +54,17 @@ const OrderListProducts = ({ items, allTotal, onIncrease, onDecrease, onDeleteAl
                     </table>
                 </Col>
                 <Col xs={{ span: 22, offset: 1 }}>
-                    <p className='order-list-products--total'><span>Всего: {allTotal} грн </span></p>
+                    <p className='order-list-products--total'><span>Всего: {totalPrice} грн </span></p>
                 </Col>
             </Row>
         </Col>
     )
 }
 
-const mapStateToProps = ({ orderList: { list, total } }) => {
+const mapStateToProps = ({ orderList: { list, totalPrice } }) => {
     return {
         items: list,
-        allTotal: total
+        totalPrice: totalPrice
     }
 }
 
