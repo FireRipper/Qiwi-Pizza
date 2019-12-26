@@ -1,6 +1,6 @@
 import updateProductList from './product-reducer'
 import updateProductChooseMenu from './choose-menu-reducer'
-import updateProductOrderList from './order-list-reducer'
+import updateProductOrderList from './order-list/order-list-reducer'
 
 const Reducer = (state, action) => {
     return {
