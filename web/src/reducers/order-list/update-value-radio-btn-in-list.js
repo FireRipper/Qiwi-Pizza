@@ -1,6 +1,6 @@
 import updateList from './update-list'
 
-const updateItemInList = (orderList, listId, radioEvent) => {
+const updateValueRadioBtnInList = (orderList, listId, radioEvent) => {
     const itemIndex = orderList.list.findIndex(({ id }) => id === listId)
     const item = orderList.list[itemIndex]
 
@@ -15,6 +15,5 @@ const updateItemInList = (orderList, listId, radioEvent) => {
     }
 }
 
-export {
-    updateItemInList
-}
+
+export default updateValueRadioBtnInList

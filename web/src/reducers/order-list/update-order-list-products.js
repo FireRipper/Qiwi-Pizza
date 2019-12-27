@@ -22,7 +22,7 @@ const updateListItem = (product, countProducts, item) => {
             title: product.title,
             count: selNumVal,
             total: totalCost,
-            currentValue: 0,
+            currentValue: defCost,
             smPrice: smallCost || oneCost,
             mdPrice: mediumCost || doubleCost,
             lgPrice: largeCost || 0,
@@ -52,7 +52,7 @@ const addedToListProducts = (state, productId) => {
 
         const newItem = updateListItem(product, countAndCost, item)
 
-        return updateTotal(list, state.orderList, countAndCost, newItem, itemIndex)
+        return updateTotal(list, countAndCost, newItem, itemIndex)
     }
 }
 

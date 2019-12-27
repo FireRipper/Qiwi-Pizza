@@ -1,9 +1,9 @@
 import updateList from './update-list'
 
-const updateTotal = (arr, orderList, countCost, newItem, itemIndex) => {
-    if (arr.length > 0) {
+const updateTotal = (orderList, countCost, newItem, itemIndex) => {
+    if (orderList.length > 0) {
 
-        const newTotal = arr.reduce(function (prevVal, curVal) {
+        const newTotal = orderList.reduce(function (prevVal, curVal) {
                 return {
                     total: prevVal.total + curVal.total
                 }
@@ -11,11 +11,11 @@ const updateTotal = (arr, orderList, countCost, newItem, itemIndex) => {
         )
         return {
             totalPrice: newTotal.total + countCost.totalCost,
-            list: updateList(orderList.list, newItem, itemIndex)
+            list: updateList(orderList, newItem, itemIndex)
         }
     } else {
         return {
-            list: updateList(orderList.list, newItem, itemIndex),
+            list: updateList(orderList, newItem, itemIndex),
             totalPrice: countCost.totalCost
         }
     }

@@ -34,13 +34,13 @@ const OrderListProducts = ({ items, totalPrice, onIncrease, onDecrease, onDelete
                 <td>{`${total} грн.`}</td>
                 <td className='order-list-products--btn--action'>
                     <Button
-                        onClick={(id) => onDecrease(id)}
+                        onClick={() => onDecrease(id)}
                         type='primary' size='small'><Icon type="minus" /></Button>
                     <Button
-                        onClick={(id) => onIncrease(id)}
+                        onClick={() => onIncrease(id)}
                         size='small'><Icon type="plus" /></Button>
                     <Button
-                        onClick={(id) => onDeleteAll(id)}
+                        onClick={() => onDeleteAll(id)}
                         type='danger' size='small'><Icon type="delete" /></Button>
                 </td>
             </tr>
