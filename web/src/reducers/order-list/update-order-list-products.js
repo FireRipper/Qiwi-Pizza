@@ -36,7 +36,7 @@ const updateListItem = (product, countProducts, item) => {
     }
 }
 
-const addedToListProducts = (state, productId) => {
+const addProductToList = (state, productId) => {
     const { productList: { products }, productChooseMenu: { chooseMenu }, orderList: { list } } = state
 
     const product = products.find(({ id }) => id === productId)
@@ -56,4 +56,4 @@ const addedToListProducts = (state, productId) => {
     }
 }
 
-export default addedToListProducts
+export default addProductToList

@@ -3,9 +3,10 @@ import {
     PRODUCT_REMOVED_FROM_ORDER_LIST, UPDATE_COUNT_AND_TOTAL_ORDER,
     UPDATE_VALUE_RADIO_BTN_IN_ORDER_LIST
 } from '../../types'
-import addedToListProducts from './update-order-list-products'
+import addProductToList from './update-order-list-products'
 import updateValueRadioBtnInList from './update-value-radio-btn-in-list'
 import { updateCountAndTotalInList } from './update-count-and-total-in-list'
+import removeProductFromList from './remove-product-from-list'
 
 const updateProductOrderList = (state, action) => {
 
@@ -18,7 +19,7 @@ const updateProductOrderList = (state, action) => {
 
     switch (action.type) {
     case PRODUCT_ADDED_TO_ORDER_LIST:
-        return addedToListProducts(state, action.payload)
+        return addProductToList(state, action.payload)
 
     case UPDATE_VALUE_RADIO_BTN_IN_ORDER_LIST:
         return updateValueRadioBtnInList(state.orderList, action.payload, action.event)
@@ -30,9 +31,7 @@ const updateProductOrderList = (state, action) => {
         return updateCountAndTotalInList(state.orderList, action.payload, -1)
 
     case ALL_PRODUCTS_REMOVED_FROM_ORDER_LIST:
-        return {
-            ...state.orderList
-        }
+        return removeProductFromList(state.orderList, action.payload)
     default:
         return state.orderList
     }
