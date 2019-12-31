@@ -36,19 +36,21 @@ class Header extends Component {
         return (
             <React.Fragment>
                 <Row className='header' type='flex' align='middle'>
-                    <Col className="header-logo" xs={12} sm={6} md={6}
+                    <Col className="header-logo" xs={12} sm={5} md={6}
                          lg={7} xl={{ span: 5, push: 1 }}>
                         <Link to="/"><img src={logo} alt="logo" /></Link>
                     </Col>
-                    <Col xs={12} sm={18} md={17} lg={14} xl={15}>
+                    <Col xs={12} sm={16} md={14} lg={13} xl={15}>
                         <Menu mode="horizontal" className="header-menu">
                             {this.renderMenuItem()}
                         </Menu>
                     </Col>
-                    <Col xs={4} md={4} lg={4}>
-                        <Badge count={totalItems}>
-                            <FontAwesomeIcon className="header-basket" icon={faShoppingBasket} />
-                        </Badge>
+                    <Col sm={3} md={{ span: 2, offset: 2 }} lg={{ span: 3, offset: 1 }} className="header-basket">
+                        <Link to="/">
+                            <Badge className="header-basket--badge" count={totalItems}>
+                                <FontAwesomeIcon className="header-basket--icon" icon={faShoppingBasket} />
+                            </Badge>
+                        </Link>
                     </Col>
                 </Row>
             </React.Fragment>
@@ -56,7 +58,7 @@ class Header extends Component {
     }
 }
 
-const mapStateToProps = ({ orderList:{ totalItems }}) => {
+const mapStateToProps = ({ orderList: { totalItems } }) => {
     return {
         totalItems
     }

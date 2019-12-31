@@ -28,9 +28,18 @@
     color: #1890ff !important;
 }
 
-.header-basket {
-    font-size: calc((100vw - 480px) / (1280 - 480) * (29 - 16) + 14px);
-    color: #52c41a;
+.header-basket .header-basket--badge {
+    font-size: calc((100vw - 480px) / (1280 - 480) * (17 - 16) + 16px) !important;
+}
+
+.header-basket .header-basket--badge .header-basket--icon {
+    font-size: calc((100vw - 480px) / (1280 - 480) * (28 - 16) + 22px);
+    color: #33475b;
+    transition: .3s ease-in-out;
+}
+
+.header-basket .header-basket--badge .header-basket--icon:hover {
+    color: #1890ff;
 }
 
 @media screen and (max-width: 992px) {
