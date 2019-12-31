@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/FireRipper/react-qiwi-pizza/compare/v0.1.1...v0.2.0) (2019-12-31)
+
+
+### Bug Fixes
+
+* **README:** upgrade README.md ([5e30ecd](https://github.com/FireRipper/react-qiwi-pizza/commit/5e30ecd31ed545fc72744e9e8a7186f44586ce5a))
+
 ### 0.1.1 (2019-12-28)
 
 
