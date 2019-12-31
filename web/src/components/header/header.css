@@ -28,6 +28,11 @@
     color: #1890ff !important;
 }
 
+.header-basket {
+    font-size: calc((100vw - 480px) / (1280 - 480) * (29 - 16) + 14px);
+    color: #52c41a;
+}
+
 @media screen and (max-width: 992px) {
     .header-logo img {
         height: 40px;

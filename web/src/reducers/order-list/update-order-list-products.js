@@ -52,7 +52,7 @@ const addProductToList = (state, productId) => {
 
         const newItem = updateListItem(product, countAndCost, item)
 
-        return updateTotal(list, countAndCost, newItem, itemIndex)
+        return updateTotal(state.orderList, countAndCost, newItem, itemIndex)
     }
 }
 

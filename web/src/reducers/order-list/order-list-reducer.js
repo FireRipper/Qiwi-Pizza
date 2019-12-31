@@ -13,7 +13,8 @@ const updateProductOrderList = (state, action) => {
     if (state === undefined) {
         return {
             list: [],
-            totalPrice: 0
+            totalPrice: 0,
+            totalItems: 0
         }
     }
 

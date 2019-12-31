@@ -1,7 +1,7 @@
 import updateList from './update-list'
 
 const removeProductFromList = (state, productId) => {
-    const { list, totalPrice } = state
+    const { list, totalPrice, totalItems } = state
 
     const itemIndex = list.findIndex(({ id }) => id === productId)
     const item = list[itemIndex]
@@ -15,8 +15,9 @@ const removeProductFromList = (state, productId) => {
     }
 
     return {
+        totalItems: totalItems - item.count,
         totalPrice: totalPrice - item.total,
-        list: updateList(list, newItem, itemIndex)
+        list: updateList(list, newItem, itemIndex),
     }
 }
 

@@ -37,7 +37,8 @@ const updateCountAndTotalInList = (orderList, fieldId, quantity) => {
 
     return {
         list: updateList(orderList.list, newItem, itemIndex),
-        totalPrice: orderList.totalPrice + item.currentValue * quantity
+        totalPrice: orderList.totalPrice + item.currentValue * quantity,
+        totalItems: orderList.totalItems + quantity
     }
 }
 
