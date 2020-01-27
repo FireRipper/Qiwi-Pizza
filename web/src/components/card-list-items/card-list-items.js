@@ -25,7 +25,8 @@ class CardListItems extends React.Component {
         arr.map(({ id, title, description, smallDesc,
                      smallCost, mediumDesc, mediumCost,
                      largeDesc, largeCost, oneCost, doubleCost,
-                     oneWeight, doubleWeight}) => {
+                     oneWeight, doubleWeight, img: image}) => {
+
             return (
                 <Col xs={{ span: 20 }} sm={{ span: 9, offset: 1 }} md={{ span: 9, offset: 1 }}
                      lg={{ span: 6, offset: 1 }}

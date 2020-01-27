@@ -30,8 +30,3 @@
     text-align: center;
     font-size: calc((100vw - 480px) / (1280 - 480) * (16 - 16) + 14px) !important;
 }
-
-
-@media screen and (max-width: 768px) {
-
-}
