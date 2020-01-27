@@ -1,55 +1,152 @@
 .header {
-    flex-grow: 0;
-    padding: 15px;
-    background: #fff;
-    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    display: flex;
+    width: calc(100% - 15px);
+    min-height: 66px;
+    align-items: center;
+    position: relative;
+    background-color: #fff;
+    box-shadow: -4px -4px 15px rgba(255, 255, 255, 1),
+    4px 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    border-radius: 4px;
 }
 
-.header-logo {
-    text-align: center;
+.header .header__hamburger {
+    display: none;
 }
 
-.header-logo img {
-    height: 45px;
+.header__links {
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
-.header-menu {
-    border: 0 !important;
-    background: transparent !important;
-    font-size: calc((100vw - 480px) / (1280 - 480) * (17 - 16) + 16px) !important;
-    text-align: center !important;
+.header__links .header__ul {
+    display: flex;
+    margin-bottom: 0;
 }
 
-.header-menu li a {
-    color: #33475b !important;
+.header__ul .header__li {
+    list-style: none;
+    padding: 16px 0;
+    position: relative;
+    transition: .2s all ease-in-out;
+    cursor: pointer;
 }
 
-.header-menu li a:hover {
-    color: #1890ff !important;
+.header__li .header--active--link {
+    color: #6741e2 !important;
 }
 
-.header-basket .header-basket--badge {
-    font-size: calc((100vw - 480px) / (1280 - 480) * (17 - 16) + 16px) !important;
+.header__li .header--active--link:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #6741E1;
 }
 
-.header-basket .header-basket--badge .header-basket--icon {
-    font-size: calc((100vw - 480px) / (1280 - 480) * (28 - 16) + 22px);
-    color: #33475b;
-    transition: .3s ease-in-out;
+.header__li .header--links__a {
+    font-size: calc((100vw - 480px) / (1280 - 480) * (20 - 16) + 18px);
+    font-weight: 600;
+    font-family: 'Lobster', cursive;
+    letter-spacing: 2px;
+    text-decoration: none;
+    padding: 20px 20px;
+    color: #5f6175;
 }
 
-.header-basket .header-basket--badge .header-basket--icon:hover {
-    color: #1890ff;
+.header__li:hover .header--links__a {
+    color: #6741e2;
 }
 
-@media screen and (max-width: 992px) {
-    .header-logo img {
-        height: 40px;
+.header__li .header--links__a:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scale(0);
+    border-bottom: 1px solid #6741e2;
+    transition: .2s transform linear;
+}
+
+.header__li:hover .header--links__a:before {
+    transform: scale(1);
+}
+
+.header__li .header--links__a .header--links__title {
+    font-size: calc((100vw - 480px) / (1280 - 480) * (16 - 16) + 16px);
+}
+
+@media (min-height: 850px) and (min-width: 1440px) {
+    .header {
+        min-height: 80px;
+    }
+
+    .header__li .header--links__a {
+        font-size: calc((100vw - 480px) / (1280 - 480) * (20 - 16) + 17px);
+    }
+
+    .header__li .header--links__a .header--links__title {
+        font-size: calc((100vw - 480px) / (1280 - 480) * (20 - 16) + 18px);
     }
 }
 
-@media screen and (max-width: 768px) {
-    .header-logo img {
-        height: 35px;
+@media (max-width: 768px) {
+    .header {
+        justify-content: space-between;
+    }
+
+    .header .header__hamburger {
+        display: flex;
+        margin-left: 15px;
+    }
+
+   /* .header__hamburger:before {
+        content: '\f036';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+    }
+
+    #app-wrapper.collapse .main .header .header__hamburger:before {
+        content: '';
+    }
+
+    .header__hamburger:after {
+        content: '';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+    }
+
+    #app-wrapper.collapse .main .header .header__hamburger:after {
+        content: '\f038';
+    }*/
+
+    .header__hamburger {
+        display: flex;
+        margin: 0 30px;
+        padding: 15px;
+        font-size: calc((100vw - 480px) / (1280 - 480) * (22 - 16) + 16px);
+        transition: .3s all;
+        color: #647e98;
+        cursor: pointer;
+    }
+
+    .header__hamburger:hover {
+        color: #6741e2;
+    }
+
+    .header__links {
+        display: none;
+    }
+}
+
+@media (max-width: 375px) {
+    .header {
+        min-height: 60px;
+        margin-top: 5px;
     }
 }
