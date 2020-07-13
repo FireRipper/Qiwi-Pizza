@@ -1,5 +1,6 @@
 import React from 'react'
-import { Button, Col, Icon, Row, Typography, Radio } from 'antd'
+import { Button, Col, Row, Typography, Radio } from 'antd'
+import { MinusOutlined, PlusOutlined, DeleteOutlined } from '@ant-design/icons'
 import { connect } from 'react-redux'
 import {
     allProductsRemovedFromOrderList, productRemovedFromOrderList,
@@ -35,13 +36,13 @@ const OrderListProducts = ({ items, totalPrice, onIncrease, onDecrease, onDelete
                 <td className='order-list-products--btn--action'>
                     <Button
                         onClick={() => onDecrease(id)}
-                        type='primary' size='small'><Icon type="minus" /></Button>
+                        type='primary' size='small'><MinusOutlined /></Button>
                     <Button
                         onClick={() => onIncrease(id)}
-                        size='small'><Icon type="plus" /></Button>
+                        size='small'><PlusOutlined /></Button>
                     <Button
                         onClick={() => onDeleteAll(id)}
-                        type='danger' size='small'><Icon type="delete" /></Button>
+                        type='danger' size='small'><DeleteOutlined /></Button>
                 </td>
             </tr>
         )

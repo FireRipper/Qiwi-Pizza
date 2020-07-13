@@ -1,5 +1,6 @@
 import React, { Fragment, Component } from 'react'
-import { Col, Row, Typography, Icon, Button } from 'antd'
+import { Col, Row, Typography, Button } from 'antd'
+import { FacebookOutlined, InstagramOutlined, MailOutlined, PhoneOutlined } from '@ant-design/icons'
 
 import './contact-page.css'
 
@@ -11,7 +12,7 @@ export default class ContactPage extends Component {
             colSpanXl: { span: 9, offset: 2 },
             colSpanLg: { span: 10, offset: 2 },
             colSpanMd: { span: 11, offset: 1 },
-            icon: 'phone',
+            icon: <PhoneOutlined className="contact-content-box__icon"/>,
             h4: 'Свяжитесь с call-центром',
             paragraph: 'Если у Вас возникли вопросы по поводу обслужования просто перезвоните нашему call-центру. Решим Вашу проблему вместе.',
             link: 'tel:+380682666606',
@@ -22,7 +23,7 @@ export default class ContactPage extends Component {
             colSpanXl: { span: 9, pull: 2 },
             colSpanLg: { span: 10, pull: 2 },
             colSpanMd: { span: 11, pull: 1 },
-            icon: 'mail',
+            icon: <MailOutlined className="contact-content-box__icon"/>,
             h4: 'Свяжитесь с нами по почте',
             paragraph: 'Если у Вас есть предложения как улучшить наш сервис по обслуживанию, пишите на почту мы рассмотрим Ваше предложения.',
             link: 'mailto: qiwipizzaria@ibox.com',
@@ -33,7 +34,7 @@ export default class ContactPage extends Component {
             colSpanXl: { span: 9, offset: 2 },
             colSpanLg: { span: 10, offset: 2 },
             colSpanMd: { span: 11, offset: 1 },
-            icon: 'facebook',
+            icon: <FacebookOutlined className="contact-content-box__icon" />,
             h4: 'Следите за новостями',
             paragraph: 'Хотите узнавать первыми о наших новинках, нет проблем, подписуйтесь на наш facebook. Здесь мы вылаживаем актуальную информацию по поводу скидок, новинок и т.д.',
             link: 'https://www.facebook.com/',
@@ -44,7 +45,7 @@ export default class ContactPage extends Component {
             colSpanXl: { span: 9, pull: 2 },
             colSpanLg: { span: 10, pull: 2 },
             colSpanMd: { span: 11, pull: 1 },
-            icon: 'instagram',
+            icon: <InstagramOutlined className="contact-content-box__icon"/>,
             h4: 'Следите за нами в инстаграм',
             paragraph: 'Хотите узнавать первыми о наших новинках, нет проблем, подписуйтесь на наш instagram. Здесь мы вылаживаем актуальную информацию по поводу скидок, новинок и т.д.',
             link: 'https://www.instagram.com/',
@@ -57,7 +58,8 @@ export default class ContactPage extends Component {
             return (
                 <Col xl={colSpanXl} lg={colSpanLg} md={colSpanMd} key={key}>
                     <div className="contact-content__box">
-                    <Icon type={icon} theme='filled' className="contact-content-box__icon"/>
+
+                        {icon}
                         <Typography.Title level={4} className="contact-content-box__h4">{h4}</Typography.Title>
                         <p className="contact-content-box__p">{paragraph}</p>
                         <Button type="link" className="contact-content-box__for__link"><a href={link} className="contact-content-box__tel" target="_blank" rel="noopener noreferrer">{linkLabel}</a></Button>

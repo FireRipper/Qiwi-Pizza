@@ -1,11 +1,12 @@
 import React from 'react'
-import { Divider, Icon } from 'antd'
+import { Divider } from 'antd'
+import { SmileOutlined } from '@ant-design/icons'
 
 import './footer.css'
 
 const Footer = () => (
     <div className="footer">
-        <Divider className='Footer-divider'><Icon type="smile" />&nbsp; Qiwi Pizza © 2019 </Divider>
+        <Divider className='Footer-divider'><SmileOutlined/>&nbsp; Qiwi Pizza © 2019 </Divider>
     </div>
 )
 
