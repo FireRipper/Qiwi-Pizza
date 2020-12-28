@@ -61,6 +61,7 @@
     "sass-loader": "9.0.2",
     "semver": "7.3.2",
     "serialize-javascript": "4.0.0",
+    "serve": "^11.3.2",
     "style-loader": "1.2.1",
     "terser-webpack-plugin": "3.0.6",
     "ts-pnp": "1.2.0",
