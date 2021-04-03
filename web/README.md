@@ -6,12 +6,12 @@ In the cart you can add or remove one product at a time. It is also possible to 
 
 ## Pictures
 <p>
-  <img src="https://raw.githubusercontent.com/FireRipper/Qiwi-Pizza/tree/master/docs/images/pic-1.png?raw=true" alt="Main" height="250px">
-  <img src="https://raw.githubusercontent.com/FireRipper/Qiwi-Pizza/tree/master/docs/images/pic-2.png?raw=true" alt="Cards/dropbox" height="250px">
-  <img src="https://raw.githubusercontent.com/FireRipper/Qiwi-Pizza/tree/master/docs/images/pic-3.png?raw=true" alt="Basket" height="250px">
-  <img src="https://raw.githubusercontent.com/FireRipper/Qiwi-Pizza/tree/master/docs/images/pic-4.png?raw=true" alt="About us" height="250px">
-  <img src="https://raw.githubusercontent.com/FireRipper/Qiwi-Pizza/tree/master/docs/images/pic-5.png?raw=true" alt="Contact" height="250px">
-  <img src="https://raw.githubusercontent.com/FireRipper/Qiwi-Pizza/tree/master/docs/images/pic-6.png?raw=true" alt="Delivery" height="250px">
+  <img src="https://raw.githubusercontent.com/FireRipper/Qiwi-Pizza/master/docs/images/pic-1.png?raw=true" alt="Main" height="250px">
+  <img src="https://raw.githubusercontent.com/FireRipper/Qiwi-Pizza/master/docs/images/pic-2.png?raw=true" alt="Cards/dropbox" height="250px">
+  <img src="https://raw.githubusercontent.com/FireRipper/Qiwi-Pizza/master/docs/images/pic-3.png?raw=true" alt="Basket" height="250px">
+  <img src="https://raw.githubusercontent.com/FireRipper/Qiwi-Pizza/master/docs/images/pic-4.png?raw=true" alt="About us" height="250px">
+  <img src="https://raw.githubusercontent.com/FireRipper/Qiwi-Pizza/master/docs/images/pic-5.png?raw=true" alt="Contact" height="250px">
+  <img src="https://raw.githubusercontent.com/FireRipper/Qiwi-Pizza/master/docs/images/pic-6.png?raw=true" alt="Delivery" height="250px">
 </p>
 
 ## How to install
