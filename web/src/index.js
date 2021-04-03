@@ -9,6 +9,9 @@ import { Provider } from 'react-redux'
 import store from './store'
 
 const productService = new ProductService()
+const baseName = process.env.REACT_APP_MODE === 'production' ? process.env.REACT_APP_BASENAME : ''
+
+console.log(baseName)
 
 ReactDOM.render(
     <Provider store={store}>

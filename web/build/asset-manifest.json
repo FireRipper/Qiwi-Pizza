@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.c947a73f.chunk.css",
-    "main.js": "/static/js/main.e12834d6.chunk.js",
-    "main.js.map": "/static/js/main.e12834d6.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.0fc9b6a0.js",
-    "runtime-main.js.map": "/static/js/runtime-main.0fc9b6a0.js.map",
-    "static/css/2.4c4477be.chunk.css": "/static/css/2.4c4477be.chunk.css",
-    "static/js/2.53f3ae17.chunk.js": "/static/js/2.53f3ae17.chunk.js",
-    "static/js/2.53f3ae17.chunk.js.map": "/static/js/2.53f3ae17.chunk.js.map",
-    "index.html": "/index.html",
-    "service-worker.js": "/service-worker.js",
-    "service-worker.js.map": "/service-worker.js.map",
-    "static/css/2.4c4477be.chunk.css.map": "/static/css/2.4c4477be.chunk.css.map",
-    "static/css/main.c947a73f.chunk.css.map": "/static/css/main.c947a73f.chunk.css.map",
-    "static/js/2.53f3ae17.chunk.js.LICENSE.txt": "/static/js/2.53f3ae17.chunk.js.LICENSE.txt",
-    "static/media/contact-page.css": "/static/media/contact.147ff7ef.jpg",
-    "static/media/logo.1c310dae.svg": "/static/media/logo.1c310dae.svg",
-    "static/media/no-photo-var2-570px.a2f7b49e.png": "/static/media/no-photo-var2-570px.a2f7b49e.png",
-    "workbox-dce9cbc5.js": "/workbox-dce9cbc5.js",
-    "workbox-dce9cbc5.js.map": "/workbox-dce9cbc5.js.map"
+    "main.css": "/Qiwi-Pizza/static/css/main.55d22246.chunk.css",
+    "main.js": "/Qiwi-Pizza/static/js/main.e524f16a.chunk.js",
+    "main.js.map": "/Qiwi-Pizza/static/js/main.e524f16a.chunk.js.map",
+    "runtime-main.js": "/Qiwi-Pizza/static/js/runtime-main.04fb30d9.js",
+    "runtime-main.js.map": "/Qiwi-Pizza/static/js/runtime-main.04fb30d9.js.map",
+    "static/css/2.4c4477be.chunk.css": "/Qiwi-Pizza/static/css/2.4c4477be.chunk.css",
+    "static/js/2.9d509486.chunk.js": "/Qiwi-Pizza/static/js/2.9d509486.chunk.js",
+    "static/js/2.9d509486.chunk.js.map": "/Qiwi-Pizza/static/js/2.9d509486.chunk.js.map",
+    "index.html": "/Qiwi-Pizza/index.html",
+    "service-worker.js": "/Qiwi-Pizza/service-worker.js",
+    "service-worker.js.map": "/Qiwi-Pizza/service-worker.js.map",
+    "static/css/2.4c4477be.chunk.css.map": "/Qiwi-Pizza/static/css/2.4c4477be.chunk.css.map",
+    "static/css/main.55d22246.chunk.css.map": "/Qiwi-Pizza/static/css/main.55d22246.chunk.css.map",
+    "static/js/2.9d509486.chunk.js.LICENSE.txt": "/Qiwi-Pizza/static/js/2.9d509486.chunk.js.LICENSE.txt",
+    "static/media/contact-page.css": "/Qiwi-Pizza/static/media/contact.147ff7ef.jpg",
+    "static/media/logo.1c310dae.svg": "/Qiwi-Pizza/static/media/logo.1c310dae.svg",
+    "static/media/no-photo-var2-570px.a2f7b49e.png": "/Qiwi-Pizza/static/media/no-photo-var2-570px.a2f7b49e.png",
+    "workbox-dce9cbc5.js": "/Qiwi-Pizza/workbox-dce9cbc5.js",
+    "workbox-dce9cbc5.js.map": "/Qiwi-Pizza/workbox-dce9cbc5.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.0fc9b6a0.js",
+    "static/js/runtime-main.04fb30d9.js",
     "static/css/2.4c4477be.chunk.css",
-    "static/js/2.53f3ae17.chunk.js",
-    "static/css/main.c947a73f.chunk.css",
-    "static/js/main.e12834d6.chunk.js"
+    "static/js/2.9d509486.chunk.js",
+    "static/css/main.55d22246.chunk.css",
+    "static/js/main.e524f16a.chunk.js"
   ]
 }
